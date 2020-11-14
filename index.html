@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, 
 				   maximum-scale=1.0, user-scalable=no">
-    <title>Thesis Defense</title>
+    <title>Sushovan Majhi: Thesis Defense</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/sush.css">
@@ -59,6 +59,14 @@
                     </li>
 
                     <li class="fragment">
+                        Discrete Morse Theory
+                    </li>
+
+                    <li class="fragment">
+                        Density Models and Graph Reconstruction
+                    </li>
+
+                    <li class="fragment">
                         <red>Introduction to Shape Comparison</red>
                     </li>
 
@@ -85,7 +93,7 @@
                 <section id="brit">
                     <img width="250" src="https://www.montana.edu/assets/images/a6ewi/image15.jpg" />
                     <p>
-                        Brittany Fasy<br>
+                        Brittany Fasy (co-adviser)<br>
                         <span class="green">School of Computing, Montana State</span>
                     </p>
                 </section>
@@ -108,8 +116,11 @@
 
             <!-- Shape -->
             <section>
-                <h3>1. Reconstruction</h3>
+                <h3>
+                    <green>I</green>. &nbsp;Reconstruction
+                </h3>
             </section>
+
             <section id="shape">
                 <h3><u>Shapes</u></h3>
                 <aside class="notes">
@@ -127,11 +138,43 @@
                 </section>
                 <section id="map">
                     <iframe width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=tulane%20university&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-	    </iframe>
+	    			</iframe>
                     <br> Our shapes of interest (the ugly ones)
                 </section>
             </section>
             <!-- Shape ends -->
+
+            <section>
+                <h3><u>Motivation</u></h3>
+                <section>
+                    <img src="sample_wedge.svg">
+                    <p style="font-size: 0.6em">Noisy Sample
+                        <green>(www.smajhi.com/shape-reconstruction)</green>
+                    </p>
+                </section>
+                <section>
+                    <img src="wedge.svg">
+                    <p style="font-size: 0.6em">
+                        Sample from
+                        <red>$S^1\wedge S^1$</red>
+                        <green>(www.smajhi.com/shape-reconstruction)</green>
+                    </p>
+                </section>
+                <section>
+                    <img src="berlin.jpg">
+                    <p style="font-size: 0.6em">
+                        GPS Traces Berlin
+                        <green>(www.mapconstruction.org)</green>
+                    </p>
+                </section>
+                <section>
+                    <img src="mahmuda.jpg">
+                    <p style="font-size: 0.6em">
+                        Reconstructed Map or Road-Network
+                        <green>(www.mapconstruction.org)</green>
+                    </p>
+                </section>
+            </section>
 
             <section>
                 <h3><u>Problem Statement</u></h3>
@@ -147,7 +190,7 @@
                 <section>
                     We ask if we can
                     <ul class="timeline" style="font-size: 0.6em">
-                        <li class="fragment">compute the homology/homotopy groups of $X$ from $S$.</li>
+                        <li class="fragment">infer the homology/homotopy groups of $X$ from $S$.</li>
                         <li class="fragment">construct a homotopy equivalent space $\widetilde X$ from $S$.</li>
                         <li class="fragment">embed $\widetilde X$ in $\mathbb{R}^N$ close to $X$.</li>
                     </ul>
