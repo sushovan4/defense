@@ -1,475 +1,436 @@
 <!-- Run: node plugins/nodes-server -->
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, 
-				   maximum-scale=1.0, user-scalable=no">    
-    <title>Shapes Comparison and Gromov-Hausdorff Distance</title>
+				   maximum-scale=1.0, user-scalable=no">
+    <title>Topological Methods in Shape Reconstruction and Comparison</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/sush.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="lib/css/monokai.css">
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-      crossorigin="anonymous"></script>
-  </head>
-  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
     <div class="reveal">
-      <div class="slides">
+        <div class="slides">
 
-	<!-- Title -->
-	<section id="title">
-	  <aside class="notes">
-	    First of all, I would like to thank the volunteers of the SIAM
-	    chapter for organizing these weekly math graduate colloquia. Since
-	    my first semester here, at Tulane, I have been putting in an
-	    appearance every semester in these talks, both as a speaker and an
-	    audience. Be it my research findings or something I find intriguing,
-	    I always try to bring it along in the colloquium. With the talk
-	    today, I conclude the continuity as I am graduating this semester.
-	    It always has been a place to learn something new from my
-	    peers. Moreover, it's a great place to mingle with the fellow
-	    students, know about their research projects, eat pizza.
+            <!-- Title -->
+            <section id="title">
+                <aside class="notes">
+                    First of all, I would like to thank the volunteers of the SIAM chapter for organizing these weekly math graduate colloquia. Since my first semester here, at Tulane, I have been putting in an appearance every semester in these talks, both as a speaker
+                    and an audience. Be it my research findings or something I find intriguing, I always try to bring it along in the colloquium. With the talk today, I conclude the continuity as I am graduating this semester. It always has been a place
+                    to learn something new from my peers. Moreover, it's a great place to mingle with the fellow students, know about their research projects, eat pizza. I am not an extempore speaker. This platform has given me the opportunity to practice
+                    my talks and presentations and receive feedback. The talks here have undoubtedly helped me to express myself more eloquently. I hope the future students will continue to keep up the tradition.
+                    <br> Without further adieu, let me start.
+                    <br> Today, I will walk you through the regime of Shape Reconstruction and introduce a few related notions, like Hausdorff and Gromov-Hausdorff distance.
+                    <br> For this talk, I am using a new technology. The idea is we can get a (client) copy of the presentation on your device by either scanning the QR code or by hitting this url using your browser. Then, you can follow along as I move
+                    through the slides.
+                </aside>
 
-	    I am not an extempore speaker. This platform has given me the
-	    opportunity to practice my talks and presentations and receive
-	    feedback.  The talks here have undoubtedly helped me to express
-	    myself more eloquently. I hope the future students will continue to
-	    keep up the tradition.
-	    <br>
-	    Without further adieu, let me start.
-	    <br>
-	    Today, I will walk you through the regime of Shape Reconstruction and introduce
-	    a few related notions, like Hausdorff and Gromov-Hausdorff distance.
-	    <br>
-	    For this talk, I am using a new technology. The idea is we can get a (client) copy
-	    of the presentation on your device by either scanning the QR code or by hitting this
-	    url using your browser. Then, you can follow along as I move through the slides. 
-	  </aside>
-	
-	  <h3><u>Shape Comparison and Gromov-Hausdorff Distance</u></h3>
-	  <h6 style="font-style: italic"><red>Sushovan "Sush" MAJHI</red></h6>
-	  <span style="font-size:0.7em"><u>Tulane University (January 21, 2020)</u></span>
-	  <br>
-	  
-	  <img width="200"
-	       src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/frame.png"/>
-	  <br>
-	  Scan the above QR or hit the following url:
-	  <span class="green">smajhi.com/gh-presentation</span>
-	</section>
-	<!-- Title ends -->
-	
-	
-	<!-- Intro -->
-	<section id="myself"
-		 data-background-iframe="https://www.smajhi.com">
-	</section>
-	<!-- Intro ends -->
-	
-	<section id="talk">
-	  <h3><u>The Manifesto</u></h3>
-	  <ul class="timeline" style="font-size:0.7em">
-	    <li class="fragment">
-	      Introduction to Shape Comparison
-	    </li>
-	    
-	    <li class="fragment">
-	      Hausdorff Distance
-	    </li>
+                <h4><u>Topological Methods<br>
+					in <br>
+					Shape Reconstruction and Comparison</u></h4>
+                <h6 style="font-style: italic">
+                    <red>Sushovan Majhi</red>
+                </h6>
+                <span style="font-size:0.7em">
+					<u>Thesis Defense, Tulane University<br>(November 25, 2020)</u>
+				</span>
+                <br>
 
-	    <li class="fragment">
-	      Gromov-Hausdorff Distance
-	    </li>
+                <img width="200" src="https://raw.githubusercontent.com/sushovan4/defense/master/qr.png" />
+                <br> Scan the above QR or hit the following url:
+                <span class="green">smajhi.com/defense</span>
+            </section>
+            <!-- Title ends -->
 
-	    <li class="fragment">
-	      Computing the Gromov-Hausdorff Distance
-	    </li>
-	  
-	    <li class="fragment">
-	      <green>Questions</green>, <green>Discussions</green>, and 
-	      &#127829; <red>Pizza</red>.
 
-	    </li>
-	  </ul>
-	</section>
-	
-	<!-- People -->
-	<section id="collaborators">
-	  <h3><u>Collaborators</u></h3>
-	  <section id="carola">
-	    <img width="500"
-		 src="https://news.tulane.edu/sites/news/files/080916_carola-wenk800_617_pbc.jpg" />
-	    <p>
-	      Carola Wenk<br>
-	      <span class="green">Computer Science, Tulane</span>
-	    </p>
-	  </section>	  
-	  <section id="jeff">
-	    <img width="250"
-		 src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Jeffrey_S._Vitter_%28cropped%29.jpg" />
-	    <p>
-	      Jeffrey Vitter<br>
-	      <span class="green">Computer and Information Science, University of Mississippi</span>
-	    </p>
-	  </section>
-	</section>
-	<!-- People ends -->
-	
-	<!-- Shape Comparison -->
-	<section>
-	  <aside class="notes">
-	    Shape Comparison is an applied field of research. It has evolved a lot in the
-	    last decade, however there are yet a lot to be done.
+            <!-- Intro -->
+            <section id="myself" data-background-iframe="https://www.smajhi.com">
+            </section>
+            <!-- Intro ends -->
 
-	    The primary goal is to distinguish shape that are visually distinct. We get trained
-	    very quickly to compare shapes at a very early age by
-	    ingenuity of learning algorithms coded in human perception. However, encoding them
-	    in machines is a big challenge. 
-	    
-	  </aside>
-	  <h3><u>Motivation</u></h3>
-	 
-	  <section id="distinguish">
-	    <red>1</red>. Distinguish Shapes
-	    <div class="container">
-	      <div class="col">
-		<img width="180"
-		     src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/circle.png">
-		<br>circle
-	      </div>
-	      <div class="col">
-		<img width="250"
-		     src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/triangle.png">
-		<br>triangle
-	      </div>
-	    </div>
-	  </section>
-	  
-	  <section id="classify">
-	    <span class="red">2</span>. Classify Shapes
-	    <div class="container">
-	      <div class="col">
-		<img width="330"
-		     src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/triangular.png">
-		<br>triangular
-	      </div>
-	      
-	      <div class="col">
-		<img width="300"
-		     src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/circular.png">
-		<br>circular
-	      </div>
-	    </div>
-	  </section>
-	  
-	  <section id="quality">
-	    <span class="red">3</span>. Quality Guarantee
-	    <div class="container">
-	      <div class="col">
-		<img src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/mahmuda.jpg">
-	      </div>
-	      
-	      <div class="col">
-		<img src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/sophia.jpg">
-	      </div>
-	    </div>
-	    <br>
-	    Map Construction from GPS data (Berlin)<br>
-	    <span class="green">https://mapconstruction.org</span>
-	  </section>
-	</section>
+            <section id="talk">
+                <h3><u>The Manifesto</u></h3>
+                <ul class="timeline" style="font-size:0.7em">
+                    <li class="fragment">
+                        Introduction to Shape Comparison
+                    </li>
 
-	<section>
-	  <h3><u>Shape Comparison</u></h3>
-	  <section>
-	    A shape can be modeled as a metric space $(X,d_X)$.
-	    <br>
-	    <p class="fragment fade-in">We need an appropriate notion of a <span class="red">distance
+                    <li class="fragment">
+                        Hausdorff Distance
+                    </li>
+
+                    <li class="fragment">
+                        Gromov-Hausdorff Distance
+                    </li>
+
+                    <li class="fragment">
+                        Computing the Gromov-Hausdorff Distance
+                    </li>
+
+                    <li class="fragment">
+                        <green>Questions</green>,
+                        <green>Discussions</green>, and &#127829;
+                        <red>Pizza</red>.
+
+                    </li>
+                </ul>
+            </section>
+
+            <!-- People -->
+            <section id="collaborators">
+                <h3><u>Collaborators</u></h3>
+                <section id="carola">
+                    <img width="500" src="https://news.tulane.edu/sites/news/files/080916_carola-wenk800_617_pbc.jpg" />
+                    <p>
+                        Carola Wenk<br>
+                        <span class="green">Computer Science, Tulane</span>
+                    </p>
+                </section>
+                <section id="jeff">
+                    <img width="250" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Jeffrey_S._Vitter_%28cropped%29.jpg" />
+                    <p>
+                        Jeffrey Vitter<br>
+                        <span class="green">Computer and Information Science, University of Mississippi</span>
+                    </p>
+                </section>
+            </section>
+            <!-- People ends -->
+
+            <!-- Shape Comparison -->
+            <section>
+                <aside class="notes">
+                    Shape Comparison is an applied field of research. It has evolved a lot in the last decade, however there are yet a lot to be done. The primary goal is to distinguish shape that are visually distinct. We get trained very quickly to compare shapes at a
+                    very early age by ingenuity of learning algorithms coded in human perception. However, encoding them in machines is a big challenge.
+
+                </aside>
+                <h3><u>Motivation</u></h3>
+
+                <section id="distinguish">
+                    <red>1</red>. Distinguish Shapes
+                    <div class="container">
+                        <div class="col">
+                            <img width="180" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/circle.png">
+                            <br>circle
+                        </div>
+                        <div class="col">
+                            <img width="250" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/triangle.png">
+                            <br>triangle
+                        </div>
+                    </div>
+                </section>
+
+                <section id="classify">
+                    <span class="red">2</span>. Classify Shapes
+                    <div class="container">
+                        <div class="col">
+                            <img width="330" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/triangular.png">
+                            <br>triangular
+                        </div>
+
+                        <div class="col">
+                            <img width="300" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/circular.png">
+                            <br>circular
+                        </div>
+                    </div>
+                </section>
+
+                <section id="quality">
+                    <span class="red">3</span>. Quality Guarantee
+                    <div class="container">
+                        <div class="col">
+                            <img src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/mahmuda.jpg">
+                        </div>
+
+                        <div class="col">
+                            <img src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/sophia.jpg">
+                        </div>
+                    </div>
+                    <br> Map Construction from GPS data (Berlin)<br>
+                    <span class="green">https://mapconstruction.org</span>
+                </section>
+            </section>
+
+            <section>
+                <h3><u>Shape Comparison</u></h3>
+                <section>
+                    A shape can be modeled as a metric space $(X,d_X)$.
+                    <br>
+                    <p class="fragment fade-in">We need an appropriate notion of a <span class="red">distance
 		measure</span> $d_?(X,Y)$ so that </p>
-	    <br>
-	    <ul style="font-size: 0.7em">
-	      <li  class="fragment fade-in">
-		$d_?(X,Y)$ defines a pseudo-metric on the class of metric spaces.
-	      </li><br>
-	      <li  class="fragment fade-in">
-		$d_?(X,Y)$ large $\iff$ very different shape</li><br>
-	      <li  class="fragment fade-in">
-		$d_?(X,Y)$ small $\iff$ $X=Y$ up to a class of deformation.</li>
-	    </ul>
-	  </section>
-	</section>
-	
-	<section id="hausdorff">
-	  <h3><u>Hausdorff Distance</u></h3>
-	  <section id="hausdorff">
-	    <br>
-	    <img width="300" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/atob.png"/>
-	    <p style="font-size:0.5em">Nearest neighbor distance
-	      (<span class="red">red points</span> $\to$ <span class="green"> green points</span>).
-	    </p>
-	    
-	    <definition class="fragment" data-header="Directed Hausdorff Distance">
-	      Let $A,B\subseteq\mathbb{R}^N$. The <span class="red">directed Hausdorff distance
-	      </span> from $A$ to $B$ is
-	      defined by $$\overrightarrow{d}_H(A,B)=\sup_{a\in A}\inf_{b\in B}\|a-b\|.$$
-	    </definition>
-	  </section>
+                    <br>
+                    <ul style="font-size: 0.7em">
+                        <li class="fragment fade-in">
+                            $d_?(X,Y)$ defines a pseudo-metric on the class of metric spaces.
+                        </li><br>
+                        <li class="fragment fade-in">
+                            $d_?(X,Y)$ large $\iff$ very different shape</li><br>
+                        <li class="fragment fade-in">
+                            $d_?(X,Y)$ small $\iff$ $X=Y$ up to a class of deformation.</li>
+                    </ul>
+                </section>
+            </section>
 
-	  <section>
-	    <definition data-header="(Undirected) Hausdorff Distance">
-	      For any two compact $X,Y\subset\mathbb{R}^N$,
-	      $$d_H(X,Y)=\max\left\{\overrightarrow{d}_H(X,Y),\overrightarrow{d}_H(Y,X)\right\}$$
-	    </definition>
-	    <br>
-	    <definition class="fragment fade-in" data-header="Hausdorff Distance">
-	      For any two compact $X,Y\subset(Z,d_Z)$,
-	      $$d^Z_H(X,Y)=\max\left\{\overrightarrow{d}^Z_H(X,Y),\overrightarrow{d}^Z_H(Y,X)\right\}$$
-	    </definition>
-	  </section>
-	  
-	  <section>
-	    <ol class="green">
-	      <li>$d^Z_H(X,Y)\geq0$,</li><br>
-	      <li class="fragment">$d^Z_H(X,Y)=d^Z_H(Y,X)$,</li><br>
-	      <li class="fragment">$d^Z_H(X,Y)=0\iff X=Y$, and </li><br>
-	      <li class="fragment">$d^Z_H(A,C)\leq d^Z_H(A,B)+d^Z_H(B,C)$.</li>
-	    </ol>
-	  </section>
-	  
-	  <section>
-	    <block>
-	      The Hausdorff distance induces a <green>complete metric space</green> on the set of
-	      all <green>compact</green> subsets of a metric space.
-	    </block>
-	    
-	    <br><br>
+            <section id="hausdorff">
+                <h3><u>Hausdorff Distance</u></h3>
+                <section id="hausdorff">
+                    <br>
+                    <img width="300" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/atob.png" />
+                    <p style="font-size:0.5em">Nearest neighbor distance (
+                        <span class="red">red points</span> $\to$ <span class="green"> green points</span>).
+                    </p>
 
-	    <div class="fragment fade-in">
-	      <div class="divider">💡</div><br>
-	      $d_H$ is sensitive to
-	      <span class="red">Shape</span>
-	      +
-	      <span class="red">Size</span>
-	      +
-	      <span class="red">Placement</span>.
-	    </div>
-	  </section>
-	</section>
-	<section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
-	<!-- Shape ends -->
-	
-	<section>
-	  <h3><u>Hausdorff under Isometry</u></h3>
+                    <definition class="fragment" data-header="Directed Hausdorff Distance">
+                        Let $A,B\subseteq\mathbb{R}^N$. The <span class="red">directed Hausdorff distance
+	      </span> from $A$ to $B$ is defined by $$\overrightarrow{d}_H(A,B)=\sup_{a\in A}\inf_{b\in B}\|a-b\|.$$
+                    </definition>
+                </section>
 
-	  <section>
-	    <br>
-	      $d_H($◤, ◢ $)=$ large.
-	      
-	      <br><br>
-	      <block style="font-size: 0.8em" class="fragment">
-		Let $\mathcal{E}(N)$ denote the class
-		of <span class="red">Euclidean isometries</span> or distance
-		preserving maps $T:\mathbb{R}^N\to\mathbb{R}^N$
-		i.e. $\|T(a)-T(b)\|=\|a-b\|$.
-		<br><br>
-		<ol>
-		  <li class="fragment fade-in">For $N=1$, $T$ is
-		    <span class="green">translation</span> or
-		    <span class="green">reflection</span>.</li>
-		  <br>
-		  <li class="fragment fade-in">
-		    For $N=2$, $T$ is <span class="green">rotation</span>,
-		    <span class="green">translation</span> or
-		    <span class="green">reflection</span>.</li>
-		</ol>
-	      </block>
-	  </section>
-	  
-	  <section>
-	    <definition data-header="Normalized Hausdorff Distance">
-	      For $X,Y\subseteq\mathbb{R}^N$, we define
-	    $$d_{H,iso}(X,Y)=\inf\limits_{T\in\mathcal{E}(N)}d_H\left(X,T(Y)\right)$$
-	    </definition>
-	      <br>
-	    <div class="fragment fade-in">
-	      <div class="divider">💡</div><br>
-	      $d_{H,iso}$ is sensitive to
-	      <span class="red">Shape</span>
-	      +
-	      <span class="red">Size</span>
-	      +
-	      <strike class="red">Placement</strike>.
-	      <br>
-	      $d_{H,iso}($◤, ◢ $)=0$.
-	    </div>
-	  </section>
-	</section>
-	
-	<section id="gh">
-	  <h3><u>Gromov-Hausdorff Distance</u></h3>	 
-	  <section>
-	    <br>
-	    How to compare shapes that do not have a common embedding?
-	    <div class="fragment fade-in">
-	      <img width="400" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/gh.png"/>
-	      <p style="font-size: 0.5em">Isometric Embedding</p>
-	    </div>
-	  </section>
+                <section>
+                    <definition data-header="(Undirected) Hausdorff Distance">
+                        For any two compact $X,Y\subset\mathbb{R}^N$, $$d_H(X,Y)=\max\left\{\overrightarrow{d}_H(X,Y),\overrightarrow{d}_H(Y,X)\right\}$$
+                    </definition>
+                    <br>
+                    <definition class="fragment fade-in" data-header="Hausdorff Distance">
+                        For any two compact $X,Y\subset(Z,d_Z)$, $$d^Z_H(X,Y)=\max\left\{\overrightarrow{d}^Z_H(X,Y),\overrightarrow{d}^Z_H(Y,X)\right\}$$
+                    </definition>
+                </section>
 
-	  <section>
-	   
-	    <definition data-header="Gromov-Hausdorff Distance">
-	      For two abstract metric spaces $(X,d_X)$ and $(Y,d_Y)$, we define
-	      $$d_{GH}(X,Y)=\inf\limits_{f,g,Z} d^Z_H(f(X),g(Y)).$$
-	    </definition>
-	  </section>
-	</section>
-	  
-	<section>
-	  <h3><u>$d_{GH}$ vs $d_{H,iso}$</u></h3>
+                <section>
+                    <ol class="green">
+                        <li>$d^Z_H(X,Y)\geq0$,</li><br>
+                        <li class="fragment">$d^Z_H(X,Y)=d^Z_H(Y,X)$,</li><br>
+                        <li class="fragment">$d^Z_H(X,Y)=0\iff X=Y$, and </li><br>
+                        <li class="fragment">$d^Z_H(A,C)\leq d^Z_H(A,B)+d^Z_H(B,C)$.</li>
+                    </ol>
+                </section>
 
-	  <section>
-	    Let $X,Y\subseteq(\mathbb{R}^N,\|\cdot\|)$ be compact. Then, both
-	    $d_{GH}(X,Y)$ and $d_{H,iso}(X,Y)$ are defined.
-	    
-	    <block class="fragment fade-in" data-header="<u>Memoli '12</u>">
-	      $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq c_N\sqrt{Md_{GH}(X,Y)},$$
-	      where $M=\max\{diam(X),diam(Y)\}$.
-	    </block>
-	  </section>
-	  
-	  <section>
-	    <block data-header="<u>Majhi et al. '19</u>">
-	      For $X,Y\subseteq\mathbb{R}^1$, we have $$d_{GH}(X,Y)\leq
-	      d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$ and the
-	      upper bound is tight.
-	    </block>    
-	  </section>
-	</section>
-	
-	<section>
-	  <h3><u>Computing $d_{GH}$</u></h3>
-	  
-	  <section>
-	    <block data-header="<u class='green'>Fact</u>">
-	      For $|X|,|Y|\leq k$, computing $d_{GH}(X,Y)$ takes $O(2^k)$ time. 
-	    </block>
-	    <br>
-	    <block data-header="<u class='green'>Fact</u>" class="fragment fade-in">
-	      For $X,Y\subset\mathbb{R}^1$ and $|X|,|Y|\leq k$, computing
-	      $d_{H,iso}(X,Y)$ takes $O(k\log{k})$ time.
-	    </block>
-	  </section>
+                <section>
+                    <block>
+                        The Hausdorff distance induces a
+                        <green>complete metric space</green> on the set of all
+                        <green>compact</green> subsets of a metric space.
+                    </block>
 
-	  <section>
-	    Sometimes, computing the exact <green>optimal solution</green> ($s_{opt}$) to an
-	    <green>optimization problem</green> is
-	    <red style="font-size: 1.3em">HARD</red>.
+                    <br><br>
 
-	    <br><br>
-	    <div  class="fragment fade-in">
-	      <div class="divider">💡</div><br>
-	      Computing an <green>approximate solution</green> ($s_{appx}$) is sometimes
-	      more <green>efficient</green>. 
-	    </div>
-	  </section>
+                    <div class="fragment fade-in">
+                        <div class="divider">💡</div><br> $d_H$ is sensitive to
+                        <span class="red">Shape</span> +
+                        <span class="red">Size</span> +
+                        <span class="red">Placement</span>.
+                    </div>
+                </section>
+            </section>
+            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
+            <!-- Shape ends -->
 
-	  <section>
-	    <definition data-header="Approximation Algorithm">
-	      For $\rho>1$, if we have $$s_{opt}\leq s_{appx}\leq\rho s_{opt},$$
-	      then the algorithm is called an approximation algorithm with an
-	      approximation factor  <green>$\rho$</green> .
-	    </definition>
-	  </section>
-	  
-	  <section>
-	    <block data-header="">
-	      $$d_{GH}(X,Y)\leq
-	      d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$
-	    </block>    
-	    <br>
-	    <div class="fragment">
-	      <div class="divider">💡</div><br>
-	      $d_{H,iso}$ approximates $d_{GH}$ with an approximate factor of
-	      $\left(1+\frac{1}{4}\right)$.
-	    </div>
-	  </section>
-	</section>
-	
-	<section data-background-iframe="https://arxiv.org/pdf/1912.13008.pdf"></section> 
-	<section>
-	  <h3><u>This Presentation</u></h3>
-	  <ul class="timeline">
-	    <li class="fragment">The framework is
-	      called <span class="green">RevealJS</span>
-	    </li>
-	    <li class="fragment">Language: <span class="green">JavaScript</span></li>
-	    <li class="fragment">Platform: (modern) Web Browsers</li>
-	    <li class="fragment">Latex Support: <span class="green">MathJax</span></li>
-	    <li class="fragment">Features: Multiplexing, Notes, Timer, Autoslide, and more.
-	  </ul>
-	</section>
-	
-	<section id="thanks">
-	  The speaker will now accept<br>
-	  <span class="red" style="font-size:2em">QUESTIONS</span>.
-	  <h1>🤔</h1>
-	</section>
-      </div>
+            <section>
+                <h3><u>Hausdorff under Isometry</u></h3>
+
+                <section>
+                    <br> $d_H($◤, ◢ $)=$ large.
+
+                    <br><br>
+                    <block style="font-size: 0.8em" class="fragment">
+                        Let $\mathcal{E}(N)$ denote the class of <span class="red">Euclidean isometries</span> or distance preserving maps $T:\mathbb{R}^N\to\mathbb{R}^N$ i.e. $\|T(a)-T(b)\|=\|a-b\|$.
+                        <br><br>
+                        <ol>
+                            <li class="fragment fade-in">For $N=1$, $T$ is
+                                <span class="green">translation</span> or
+                                <span class="green">reflection</span>.</li>
+                            <br>
+                            <li class="fragment fade-in">
+                                For $N=2$, $T$ is <span class="green">rotation</span>,
+                                <span class="green">translation</span> or
+                                <span class="green">reflection</span>.</li>
+                        </ol>
+                    </block>
+                </section>
+
+                <section>
+                    <definition data-header="Normalized Hausdorff Distance">
+                        For $X,Y\subseteq\mathbb{R}^N$, we define $$d_{H,iso}(X,Y)=\inf\limits_{T\in\mathcal{E}(N)}d_H\left(X,T(Y)\right)$$
+                    </definition>
+                    <br>
+                    <div class="fragment fade-in">
+                        <div class="divider">💡</div><br> $d_{H,iso}$ is sensitive to
+                        <span class="red">Shape</span> +
+                        <span class="red">Size</span> +
+                        <strike class="red">Placement</strike>.
+                        <br> $d_{H,iso}($◤, ◢ $)=0$.
+                    </div>
+                </section>
+            </section>
+
+            <section id="gh">
+                <h3><u>Gromov-Hausdorff Distance</u></h3>
+                <section>
+                    <br> How to compare shapes that do not have a common embedding?
+                    <div class="fragment fade-in">
+                        <img width="400" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/gh.png" />
+                        <p style="font-size: 0.5em">Isometric Embedding</p>
+                    </div>
+                </section>
+
+                <section>
+
+                    <definition data-header="Gromov-Hausdorff Distance">
+                        For two abstract metric spaces $(X,d_X)$ and $(Y,d_Y)$, we define $$d_{GH}(X,Y)=\inf\limits_{f,g,Z} d^Z_H(f(X),g(Y)).$$
+                    </definition>
+                </section>
+            </section>
+
+            <section>
+                <h3><u>$d_{GH}$ vs $d_{H,iso}$</u></h3>
+
+                <section>
+                    Let $X,Y\subseteq(\mathbb{R}^N,\|\cdot\|)$ be compact. Then, both $d_{GH}(X,Y)$ and $d_{H,iso}(X,Y)$ are defined.
+
+                    <block class="fragment fade-in" data-header="<u>Memoli '12</u>">
+                        $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq c_N\sqrt{Md_{GH}(X,Y)},$$ where $M=\max\{diam(X),diam(Y)\}$.
+                    </block>
+                </section>
+
+                <section>
+                    <block data-header="<u>Majhi et al. '19</u>">
+                        For $X,Y\subseteq\mathbb{R}^1$, we have $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$ and the upper bound is tight.
+                    </block>
+                </section>
+            </section>
+
+            <section>
+                <h3><u>Computing $d_{GH}$</u></h3>
+
+                <section>
+                    <block data-header="<u class='green'>Fact</u>">
+                        For $|X|,|Y|\leq k$, computing $d_{GH}(X,Y)$ takes $O(2^k)$ time.
+                    </block>
+                    <br>
+                    <block data-header="<u class='green'>Fact</u>" class="fragment fade-in">
+                        For $X,Y\subset\mathbb{R}^1$ and $|X|,|Y|\leq k$, computing $d_{H,iso}(X,Y)$ takes $O(k\log{k})$ time.
+                    </block>
+                </section>
+
+                <section>
+                    Sometimes, computing the exact
+                    <green>optimal solution</green> ($s_{opt}$) to an
+                    <green>optimization problem</green> is
+                    <red style="font-size: 1.3em">HARD</red>.
+
+                    <br><br>
+                    <div class="fragment fade-in">
+                        <div class="divider">💡</div><br> Computing an
+                        <green>approximate solution</green> ($s_{appx}$) is sometimes more
+                        <green>efficient</green>.
+                    </div>
+                </section>
+
+                <section>
+                    <definition data-header="Approximation Algorithm">
+                        For $\rho>1$, if we have $$s_{opt}\leq s_{appx}\leq\rho s_{opt},$$ then the algorithm is called an approximation algorithm with an approximation factor
+                        <green>$\rho$</green> .
+                    </definition>
+                </section>
+
+                <section>
+                    <block data-header="">
+                        $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$
+                    </block>
+                    <br>
+                    <div class="fragment">
+                        <div class="divider">💡</div><br> $d_{H,iso}$ approximates $d_{GH}$ with an approximate factor of $\left(1+\frac{1}{4}\right)$.
+                    </div>
+                </section>
+            </section>
+
+            <section data-background-iframe="https://arxiv.org/pdf/1912.13008.pdf"></section>
+            <section>
+                <h3><u>This Presentation</u></h3>
+                <ul class="timeline">
+                    <li class="fragment">The framework is called <span class="green">RevealJS</span>
+                    </li>
+                    <li class="fragment">Language: <span class="green">JavaScript</span></li>
+                    <li class="fragment">Platform: (modern) Web Browsers</li>
+                    <li class="fragment">Latex Support: <span class="green">MathJax</span></li>
+                    <li class="fragment">Features: Multiplexing, Notes, Timer, Autoslide, and more.
+                </ul>
+            </section>
+
+            <section id="thanks">
+                The speaker will now accept<br>
+                <span class="red" style="font-size:2em">QUESTIONS</span>.
+                <h1>🤔</h1>
+            </section>
+        </div>
     </div>
-    
-    
+
+
     <!-- Scripts to load after DOM -->
     <script src="js/reveal.js"></script>
     <script src="js/custom.js"></script>
-    
+
     <script>
-      Reveal.initialize({
-      controls: true,
-      controlsTutorial: true,
-      controlsLayout: 'edge',
-      progress: true,
-      defaultTiming: 120,
-      slideNumber: true,
-      hash: true,
-      keyboard: true,
-      center: true,
-      math: {
-      "HTML-CSS" : {webFont: "Neo-Euler"}
-      },
-      <!-- Uncomment if master -->
-      <!-- multiplex: { -->
-      <!-- secret: "15794407689611228817", -->
-      <!-- id: "6962fd3b58568ccb", -->
-      <!-- url: "https://reveal-js-multiplex-ccjbegmaii.now.sh", -->
-      <!-- }, -->
-      <!-- dependencies: [ -->
-      <!-- { src: 'plugin/highlight/highlight.js', async: true }, -->
-      <!-- { src: 'plugin/notes/notes.js',         async: true }, -->
-      <!-- { src: 'plugin/math/math.js',           async: true}, -->
-      <!-- { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js',async: true }, -->
-      <!-- { src: 'plugin/multiplex/master.js', async: true }, -->
-      <!-- { src: 'plugin/notes-server/client.js', async: true } -->
-      <!-- ], -->
-      <!-- Uncomment if client -->
-      multiplex: {
-      secret: null,
-      id: "6962fd3b58568ccb",
-      url: "https://reveal-js-multiplex-ccjbegmaii.now.sh",
-      },
-      dependencies: [
-      { src: 'plugin/highlight/highlight.js', async: true },
-      { src: 'plugin/notes/notes.js',         async: true },
-      { src: 'plugin/math/math.js',           async: true},
-      { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js',async: true },
-      { src: 'plugin/multiplex/client.js', async: true }
-      ],
-      });
+        Reveal.initialize({
+            controls: true,
+            controlsTutorial: true,
+            controlsLayout: 'edge',
+            progress: true,
+            defaultTiming: 120,
+            slideNumber: true,
+            hash: true,
+            keyboard: true,
+            center: true,
+            math: {
+                "HTML-CSS": {
+                    webFont: "Neo-Euler"
+                }
+            },
+            <!-- Uncomment if master -->
+            <!-- multiplex: { -->
+            <!-- secret: "15794407689611228817", -->
+            <!-- id: "6962fd3b58568ccb", -->
+            <!-- url: "https://reveal-js-multiplex-ccjbegmaii.now.sh", -->
+            <!-- }, -->
+            <!-- dependencies: [ -->
+            <!-- { src: 'plugin/highlight/highlight.js', async: true }, -->
+            <!-- { src: 'plugin/notes/notes.js',         async: true }, -->
+            <!-- { src: 'plugin/math/math.js',           async: true}, -->
+            <!-- { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js',async: true }, -->
+            <!-- { src: 'plugin/multiplex/master.js', async: true }, -->
+            <!-- { src: 'plugin/notes-server/client.js', async: true } -->
+            <!-- ], -->
+            <!-- Uncomment if client -->
+            multiplex: {
+                secret: null,
+                id: "6962fd3b58568ccb",
+                url: "https://reveal-js-multiplex-ccjbegmaii.now.sh",
+            },
+            dependencies: [{
+                src: 'plugin/highlight/highlight.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'plugin/math/math.js',
+                async: true
+            }, {
+                src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js',
+                async: true
+            }, {
+                src: 'plugin/multiplex/client.js',
+                async: true
+            }],
+        });
     </script>
     <!-- Scripts end -->
-  </body>
+</body>
+
 </html>
