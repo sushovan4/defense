@@ -1,4 +1,4 @@
-<!-- Run: node plugins/nodes-server -->
+<!-- Run: node plugins/notes-server -->
 <!doctype html>
 <html>
 
@@ -6,13 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, 
 				   maximum-scale=1.0, user-scalable=no">
-    <title>Topological Methods in Shape Reconstruction and Comparison</title>
+    <title>Thesis Defense</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/sush.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="lib/css/monokai.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -21,64 +22,52 @@
 
             <!-- Title -->
             <section id="title">
-                <aside class="notes">
-                    First of all, I would like to thank the volunteers of the SIAM chapter for organizing these weekly math graduate colloquia. Since my first semester here, at Tulane, I have been putting in an appearance every semester in these talks, both as a speaker
-                    and an audience. Be it my research findings or something I find intriguing, I always try to bring it along in the colloquium. With the talk today, I conclude the continuity as I am graduating this semester. It always has been a place
-                    to learn something new from my peers. Moreover, it's a great place to mingle with the fellow students, know about their research projects, eat pizza. I am not an extempore speaker. This platform has given me the opportunity to practice
-                    my talks and presentations and receive feedback. The talks here have undoubtedly helped me to express myself more eloquently. I hope the future students will continue to keep up the tradition.
-                    <br> Without further adieu, let me start.
-                    <br> Today, I will walk you through the regime of Shape Reconstruction and introduce a few related notions, like Hausdorff and Gromov-Hausdorff distance.
-                    <br> For this talk, I am using a new technology. The idea is we can get a (client) copy of the presentation on your device by either scanning the QR code or by hitting this url using your browser. Then, you can follow along as I move
-                    through the slides.
-                </aside>
 
-                <h4><u>Topological Methods<br>
-					in <br>
-					Shape Reconstruction and Comparison</u></h4>
+                <h4><u>Topological Methods<br> in<br> Shape Reconstruction
+                	and
+					Comparison</u>
+                </h4>
                 <h6 style="font-style: italic">
-                    <red>Sushovan Majhi</red>
+                    <green>Sushovan MAJHI</green>
                 </h6>
-                <span style="font-size:0.7em">
-					<u>Thesis Defense, Tulane University<br>(November 25, 2020)</u>
-				</span>
+                <span style="font-size:0.7em">Thesis Defense<br>November 25, 2020</span>
                 <br>
 
-                <img width="200" src="https://raw.githubusercontent.com/sushovan4/defense/master/qr.png" />
-                <br> Scan the above QR or hit the following url:
+                <img width="150" src="https://raw.githubusercontent.com/sushovan4/defense/master/qr.png" />
+                <br>
+                <span style="font-size:0.7em">
+					Scan the above QR or hit the following url:
+				</span>
+
                 <span class="green">smajhi.com/defense</span>
             </section>
             <!-- Title ends -->
 
-
-            <!-- Intro -->
-            <section id="myself" data-background-iframe="https://www.smajhi.com">
-            </section>
-            <!-- Intro ends -->
-
             <section id="talk">
                 <h3><u>The Manifesto</u></h3>
-                <ul class="timeline" style="font-size:0.7em">
+                <ul class="timeline" style="font-size:0.6em">
                     <li class="fragment">
-                        Introduction to Shape Comparison
+                        <green>Introduction to Shape Reconstruction</green>
                     </li>
 
                     <li class="fragment">
-                        Hausdorff Distance
+                        <green>Vietoris-Rips and &#268;ech Complexes</green>
                     </li>
 
                     <li class="fragment">
-                        Gromov-Hausdorff Distance
+                        <green>Shape Reconstruction Library</green>
                     </li>
 
                     <li class="fragment">
-                        Computing the Gromov-Hausdorff Distance
+                        <red>Introduction to Shape Comparison</red>
                     </li>
 
                     <li class="fragment">
-                        <green>Questions</green>,
-                        <green>Discussions</green>, and &#127829;
-                        <red>Pizza</red>.
+                        <red>Hausdorff and Gromov-Hausdorff Distance</red>
+                    </li>
 
+                    <li class="fragment">
+                        <red>Approximating the Gromov-Hausdorff Distance</red>
                     </li>
                 </ul>
             </section>
@@ -89,8 +78,22 @@
                 <section id="carola">
                     <img width="500" src="https://news.tulane.edu/sites/news/files/080916_carola-wenk800_617_pbc.jpg" />
                     <p>
-                        Carola Wenk<br>
-                        <span class="green">Computer Science, Tulane</span>
+                        Carola Wenk (adviser)<br>
+                        <span class="green">Computer Science, Tulane University</span>
+                    </p>
+                </section>
+                <section id="brit">
+                    <img width="250" src="https://www.montana.edu/assets/images/a6ewi/image15.jpg" />
+                    <p>
+                        Brittany Fasy<br>
+                        <span class="green">School of Computing, Montana State</span>
+                    </p>
+                </section>
+                <section id="rafal">
+                    <img width="300" src="https://sse.tulane.edu/sites/sse.tulane.edu/files/komen.jpg" />
+                    <p>
+                        Rafal Komendarczyk<br>
+                        <span class="green">Mathematics, Tulane University</span>
                     </p>
                 </section>
                 <section id="jeff">
@@ -103,7 +106,149 @@
             </section>
             <!-- People ends -->
 
+            <!-- Shape -->
+            <section>
+                <h3>1. Reconstruction</h3>
+            </section>
+            <section id="shape">
+                <h3><u>Shapes</u></h3>
+                <aside class="notes">
+                    In topology, shapes are distinguished by the topological features they manifest. The best class of shapes one always hopes to deal with is manifolds.
+
+                </aside>
+                <section id="manifold">
+                    <img width="200" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/circle.png" />
+                    <img width="300" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/torus.png" />
+                    <br> Manifolds (the good ones)
+                </section>
+                <section id="non-manifold">
+                    <img width="300" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/circles.png" />
+                    <br> Stratified-manifolds (the bad ones)
+                </section>
+                <section id="map">
+                    <iframe width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=tulane%20university&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+	    </iframe>
+                    <br> Our shapes of interest (the ugly ones)
+                </section>
+            </section>
+            <!-- Shape ends -->
+
+            <section>
+                <h3><u>Problem Statement</u></h3>
+                <section>
+                    <ul class="timeline" style="font-size: 0.6em">
+                        <li class="fragment">$X$ is an
+                            <red>unknown</red> (compact) subset of $\mathbb{R}^N$.</li>
+                        <li class="fragment">We have a sample or a <span class="green">point-cloud</span> $(S,\|\cdot\|)$.
+                        </li>
+                        <li class="fragment">$S$ is expected to be "dense" in $X$.</li>
+                    </ul>
+                </section>
+                <section>
+                    We ask if we can
+                    <ul class="timeline" style="font-size: 0.6em">
+                        <li class="fragment">compute the homology/homotopy groups of $X$ from $S$.</li>
+                        <li class="fragment">construct a homotopy equivalent space $\widetilde X$ from $S$.</li>
+                        <li class="fragment">embed $\widetilde X$ in $\mathbb{R}^N$ close to $X$.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="sampling">
+                <h3><u>Shape <span class="green">⟶</span> Sample</u></h3>
+                <section>
+                    <img width="500" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/click.jpg" />
+                    <br> continuous object <span class="green">⟶</span> Array of rgb pixels
+                </section>
+                <section>
+                    <img width="700" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/gps.jpg" />
+                    <br><br> Road <span class="green">⟶</span> GPS locations
+                </section>
+            </section>
+
+            <section id="reconstruction">
+                <h3><u>Data <span class="green">⟶</span> Shape</u></h3>
+                <h6>Vietoris-Rips at scale $\epsilon>0$</h6>
+                <img width="100" style="margin:50px;border:none;background:none" src="data.png" />
+
+                <span class="green">⟶</span>
+                <img width="100" style="margin:50px;border:none;background:none" src="rips.png" />
+                <br> <br>
+                <div class="fragment">
+                    <div class="divider">💡</div><br>
+
+                    <definition data-header="Vietoris-Rips Complex">
+                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)
+                        <\epsilon$ is a $(k-1)$-simplex. </definition>
+                </div>
+            </section>
+
+            <section id="manifold-recon">
+                <h3><u>Manifold Reconstruction</u></h3>
+                (Adams H. et al.)
+                <br> small $\epsilon$ + dense sample
+                <br>=<br> Rips complex is a good reconstruction for <span class="green">manifolds</span>.
+            </section>
+            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
+
+            <section id="graph-recon">
+                <h3><u>Geodesic Spaces</u></h3>
+                small $\epsilon$ + dense sample trick
+                <br><span class="red">does not work</span><br> &#128546;
+            </section>
+            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
+
+            <section>
+                <h3><u>Our Approach</u></h3>
+                <section>
+                    <ul class="timeline" style="font-size: 0.8em">
+                        <li class="fragment">$X\subseteq\mathbb{R}^N$ is a
+                            <green>geodesic</green> subspace $(X,d_L)$.</li>
+                        <li class="fragment">
+                            <green>Distortion</green>
+                            $\delta=\sup_{x\neq y}\frac{d_L(x,y)}{\|x-y\|}$ is finite.</li>
+                        <li class="fragment">
+                            <green>Convexity radius</green> $\rho$ is positive.</li>
+
+                        <li class="fragment">$d_H(X,S)$ is small.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <block data-header="<u>Persistence-based Reconstruction</u>">
+                        If $d_H(X,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
+                </section>
+            </section>
+
+            <section data-background-iframe="https://arxiv.org/pdf/1810.10144.pdf"></section>
+            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
+
+            <section>
+                <h3><u>The Reconstruction Library</u></h3>
+                <ul class="timeline">
+                    <li class="fragment">I call it <span class="green">Shape Reconstruction</span></li>
+                    <li class="fragment">Language: <span class="green">JavaScript</span></li>
+                    <li class="fragment">Platform: (modern) Web Browsers</li>
+                    <li class="fragment">Hosted on <span class="green">Github</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><u>Directions</u></h3>
+                <ul class="timeline">
+                    <li class="fragment">Homotopy-equivalent reconstruction of higher-dimensional geodesic spaces?</li>
+                    <li class="fragment">Geometric reconstruction of higher-dimensional geodesic spaces?</span>
+                    </li>
+                    <li class="fragment">Can the library support custom user-input?</li>
+                </ul>
+            </section>
+
             <!-- Shape Comparison -->
+
+            <section>
+                <h3>2. Comparison</h3>
+            </section>
             <section>
                 <aside class="notes">
                     Shape Comparison is an applied field of research. It has evolved a lot in the last decade, however there are yet a lot to be done. The primary goal is to distinguish shape that are visually distinct. We get trained very quickly to compare shapes at a
@@ -228,7 +373,6 @@
                     </div>
                 </section>
             </section>
-            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
             <!-- Shape ends -->
 
             <section>
@@ -319,27 +463,6 @@
                 </section>
 
                 <section>
-                    Sometimes, computing the exact
-                    <green>optimal solution</green> ($s_{opt}$) to an
-                    <green>optimization problem</green> is
-                    <red style="font-size: 1.3em">HARD</red>.
-
-                    <br><br>
-                    <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> Computing an
-                        <green>approximate solution</green> ($s_{appx}$) is sometimes more
-                        <green>efficient</green>.
-                    </div>
-                </section>
-
-                <section>
-                    <definition data-header="Approximation Algorithm">
-                        For $\rho>1$, if we have $$s_{opt}\leq s_{appx}\leq\rho s_{opt},$$ then the algorithm is called an approximation algorithm with an approximation factor
-                        <green>$\rho$</green> .
-                    </definition>
-                </section>
-
-                <section>
                     <block data-header="">
                         $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$
                     </block>
@@ -351,15 +474,14 @@
             </section>
 
             <section data-background-iframe="https://arxiv.org/pdf/1912.13008.pdf"></section>
+
             <section>
-                <h3><u>This Presentation</u></h3>
+                <h3><u>Directions</u></h3>
                 <ul class="timeline">
-                    <li class="fragment">The framework is called <span class="green">RevealJS</span>
+                    <li class="fragment">How to approximate $d_{GH}$ in higher dimensions?</li>
+                    <li class="fragment">What is the least dimension where it is NP-hard?</span>
                     </li>
-                    <li class="fragment">Language: <span class="green">JavaScript</span></li>
-                    <li class="fragment">Platform: (modern) Web Browsers</li>
-                    <li class="fragment">Latex Support: <span class="green">MathJax</span></li>
-                    <li class="fragment">Features: Multiplexing, Notes, Timer, Autoslide, and more.
+                    <li class="fragment">Is it NP-hard in $\mathbb{R}^1$?</li>
                 </ul>
             </section>
 
