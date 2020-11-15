@@ -1,3 +1,4 @@
+<!-- engulf all bells and whistles -->
 <!-- Run: node plugins/notes-server -->
 <!doctype html>
 <html>
@@ -114,6 +115,22 @@
             </section>
             <!-- People ends -->
 
+            <section id="special">
+                <h3><u>Special Thanks</u></h3>
+                <br><br>
+                <ul class="timeline" style="font-size:0.7em">
+                    <li class="fragment">
+                        <green>Yusu Wang</green> and                         
+                        <green>Facundo Memoli</green>, Ohio State University
+                    </li>
+                    <li class="fragment">
+                        <green>Helmut Alt</green>, Free University of Berlin 
+                    </li>
+                    <li class="fragment">
+                        <green>Mathematics</green> and <green>Computer Science</green> Department
+                    </li>
+                </ul>
+            </section>
             <!-- Shape -->
             <section>
                 <h3>
@@ -179,20 +196,54 @@
             <section>
                 <h3><u>Problem Statement</u></h3>
                 <section>
-                    <ul class="timeline" style="font-size: 0.6em">
-                        <li class="fragment">$X$ is an
-                            <red>unknown</red> (compact) subset of $\mathbb{R}^N$.</li>
-                        <li class="fragment">We have a sample or a <span class="green">point-cloud</span> $(S,\|\cdot\|)$.
+                    <ul class="timeline" style="font-size: 0.9em">
+                        <li class="fragment">Let $X$ be a
+                            <red>hidden</red> subset of $\mathbb{R}^N$</li>
+                        <li class="fragment">
+                            We have a sample or a 
+                            <span class="green">point-cloud</span> $(S,\|\cdot\|)$
                         </li>
-                        <li class="fragment">$S$ is expected to be "dense" in $X$.</li>
+                        <li class="fragment">
+                            $S$ is
+                            <span class="green">dense</span> around $X$,
+                            i.e., <green>$d_H(X,S)$</green> is small
+                        </li>
                     </ul>
                 </section>
                 <section>
-                    We ask if we can
-                    <ul class="timeline" style="font-size: 0.6em">
-                        <li class="fragment">infer the homology/homotopy groups of $X$ from $S$.</li>
-                        <li class="fragment">construct a homotopy equivalent space $\widetilde X$ from $S$.</li>
-                        <li class="fragment">embed $\widetilde X$ in $\mathbb{R}^N$ close to $X$.</li>
+                    <red>Q</red>: How to infer the topology of $X$ from a finite sample $S$?<br>
+                    <div class="fragment">
+                        <br>
+                        <div class="divider">💡</div>
+                        <br>
+                        <green>&mdash;</green> Use topological methods<br>
+                    </div>
+                    <ul class="timeline" style="font-size: 0.8em">
+                        <li class="fragment">Nerve Lemma</li>
+                        <li class="fragment">Vietoris-Rips, Cech Complex</li>
+                        <li class="fragment">Discrete Morse Theory</li>
+                    </ul>
+                </section>
+                <section>
+                    <red>Q</red>: What does <green>inference</green> even mean in such a reconstruction context? 
+                    <ul class="timeline" style="font-size: 0.7em">
+                        <li class="fragment">Compute <green>$H_*(X)$ from $S$</green> 
+                            and/or <green>$\pi_*(X,b)$</green></li>
+                        <li class="fragment">Construct $\widetilde{X}$ 
+                            <green>homotopy equivalent</green> to $X$</li>
+                        <li class="fragment">$\widetilde{X}$ has an <green>embedding</green> in $\R^N$</li>
+                        <li class="fragment">$\widetilde{X}$ is <green>geometrically close</green> to $X$</li>
+                    </ul>
+                </section>
+                <section>
+                    <red>Q</red>: What does <green>inference</green> even mean in such a reconstruction context?   
+                    <ul class="timeline" style="font-size: 0.7em">
+                        <li class="fragment">Compute <green>$H_*(X)$ from $S$</green> 
+                            and/or <green>$\pi_*(X,b)$</green></li>
+                        <li class="fragment">Construct $\widetilde{X}$ 
+                            <green>homotopy equivalent</green> to $X$</li>
+                        <li class="fragment">$\widetilde{X}$ has an <green>embedding</green> in $\R^N$</li>
+                        <li class="fragment">$\widetilde{X}$ is <green>geometrically close</green> to $X$</li>
                     </ul>
                 </section>
             </section>
