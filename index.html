@@ -310,8 +310,10 @@
 
                 <section>
                     <block data-header="<u>Persistence-based Reconstruction</u>">
-                        If $d_H(X,S)
-                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
+                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
+                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
+                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
+                        </block>
                 </section>
             </section>
 
@@ -345,8 +347,13 @@
             </section>
             <section>
                 <aside class="notes">
-                    Shape Comparison is an applied field of research. It has evolved a lot in the last decade, however there are yet a lot to be done. The primary goal is to distinguish shape that are visually distinct. We get trained very quickly to compare shapes at a
-                    very early age by ingenuity of learning algorithms coded in human perception. However, encoding them in machines is a big challenge.
+                    Shape Comparison is an applied field of research. It has
+                    evolved a lot in the last decade, however there are yet a
+                    lot to be done. The primary goal is to distinguish shape
+                    that are visually distinct. We get trained very quickly to
+                    compare shapes at a very early age by ingenuity of learning
+                    algorithms coded in human perception. However, encoding them
+                    in machines is a big challenge.
 
                 </aside>
                 <h3><u>Motivation</u></h3>
@@ -587,13 +594,13 @@
         </div>
     </div>
 
-
-    <!-- Scripts to load after DOM -->
-    <script src="js/reveal.js"></script>
-    <script src="js/custom.js"></script>
-
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
     <script>
         Reveal.initialize({
+            hash: true,
             controls: true,
             controlsTutorial: true,
             controlsLayout: 'edge',
@@ -608,42 +615,8 @@
                     webFont: "Neo-Euler"
                 }
             },
-            <!-- Uncomment if master -->
-            <!-- multiplex: { -->
-            <!-- secret: "15794407689611228817", -->
-            <!-- id: "6962fd3b58568ccb", -->
-            <!-- url: "https://reveal-js-multiplex-ccjbegmaii.now.sh", -->
-            <!-- }, -->
-            <!-- dependencies: [ -->
-            <!-- { src: 'plugin/highlight/highlight.js', async: true }, -->
-            <!-- { src: 'plugin/notes/notes.js',         async: true }, -->
-            <!-- { src: 'plugin/math/math.js',           async: true}, -->
-            <!-- { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js',async: true }, -->
-            <!-- { src: 'plugin/multiplex/master.js', async: true }, -->
-            <!-- { src: 'plugin/notes-server/client.js', async: true } -->
-            <!-- ], -->
-            <!-- Uncomment if client -->
-            multiplex: {
-                secret: null,
-                id: "6962fd3b58568ccb",
-                url: "https://reveal-js-multiplex-ccjbegmaii.now.sh",
-            },
-            dependencies: [{
-                src: 'plugin/highlight/highlight.js',
-                async: true
-            }, {
-                src: 'plugin/notes/notes.js',
-                async: true
-            }, {
-                src: 'plugin/math/math.js',
-                async: true
-            }, {
-                src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js',
-                async: true
-            }, {
-                src: 'plugin/multiplex/client.js',
-                async: true
-            }],
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ RevealHighlight, RevealNotes ]
         });
     </script>
     <!-- Scripts end -->
