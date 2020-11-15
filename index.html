@@ -231,18 +231,7 @@
                             and/or <green>$\pi_*(X,b)$</green></li>
                         <li class="fragment">Construct $\widetilde{X}$ 
                             <green>homotopy equivalent</green> to $X$</li>
-                        <li class="fragment">$\widetilde{X}$ has an <green>embedding</green> in $\R^N$</li>
-                        <li class="fragment">$\widetilde{X}$ is <green>geometrically close</green> to $X$</li>
-                    </ul>
-                </section>
-                <section>
-                    <red>Q</red>: What does <green>inference</green> even mean in such a reconstruction context?   
-                    <ul class="timeline" style="font-size: 0.7em">
-                        <li class="fragment">Compute <green>$H_*(X)$ from $S$</green> 
-                            and/or <green>$\pi_*(X,b)$</green></li>
-                        <li class="fragment">Construct $\widetilde{X}$ 
-                            <green>homotopy equivalent</green> to $X$</li>
-                        <li class="fragment">$\widetilde{X}$ has an <green>embedding</green> in $\R^N$</li>
+                        <li class="fragment">$\widetilde{X}$ has an <green>embedding</green> in $\mathbb{R}^N$</li>
                         <li class="fragment">$\widetilde{X}$ is <green>geometrically close</green> to $X$</li>
                     </ul>
                 </section>
@@ -263,25 +252,31 @@
             <section id="reconstruction">
                 <h3><u>Data <span class="green">⟶</span> Shape</u></h3>
                 <h6>Vietoris-Rips at scale $\epsilon>0$</h6>
-                <img width="100" style="margin:50px;border:none;background:none" src="data.png" />
+                <div style="display: flex">  
+                    <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/data.png" />
 
                 <span class="green">⟶</span>
-                <img width="100" style="margin:50px;border:none;background:none" src="rips.png" />
-                <br> <br>
-                <div class="fragment">
-                    <div class="divider">💡</div><br>
-
+                <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
+            </div>
+            <div class="fragment">
                     <definition data-header="Vietoris-Rips Complex">
-                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)
-                        <\epsilon$ is a $(k-1)$-simplex. </definition>
+                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex. 
+                    </definition>
                 </div>
             </section>
 
             <section id="manifold-recon">
                 <h3><u>Manifold Reconstruction</u></h3>
-                (Adams H. et al.)
-                <br> small $\epsilon$ + dense sample
-                <br>=<br> Rips complex is a good reconstruction for <span class="green">manifolds</span>.
+                <section>
+                    (Niyogi, Smale.)
+                    <br> small $\epsilon$ + dense sample
+                    <br>=<br> Cech complex is a good reconstruction for <span class="green">manifolds</span>.    
+                </section>
+                <section>
+                    (Adams H. et al.)
+                    <br> small $\epsilon$ + dense sample
+                    <br>=<br> Rips complex is a good reconstruction for <span class="green">manifolds</span>.    
+                </section>
             </section>
             <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
 
@@ -290,7 +285,6 @@
                 small $\epsilon$ + dense sample trick
                 <br><span class="red">does not work</span><br> &#128546;
             </section>
-            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
 
             <section>
                 <h3><u>Our Approach</u></h3>
@@ -307,21 +301,44 @@
                         <li class="fragment">$d_H(X,S)$ is small.</li>
                     </ul>
                 </section>
-
+            </section>
+            <section>
+                <h3><u>Topological Reconstruction</u></h3>
                 <section>
-                    <block data-header="<u>Persistence-based Reconstruction</u>">
+                    <block data-header="<u>Rips Reconstruction</u>">
                         If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
                         the image $$Im(j_*)\simeq\pi_*(X),$$ where
                         $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                        </block>
+                    </block>
+                </section>
+                <section>
+                    <block data-header="<u>Cech Reconstruction</u>">
+                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
+                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
+                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
+                    </block>
+                </section>
+            </section>
+            <section>
+                <h3><u>Geometric Reconstruction</u></h3>
+                <section>
+                    <block data-header="<u>Rips Reconstruction</u>">
+                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
+                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
+                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
+                    </block>
+                </section>
+                <section>
+                    <block data-header="<u>Cech Reconstruction</u>">
+                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
+                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
+                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
+                    </block>
                 </section>
             </section>
 
-            <section data-background-iframe="https://arxiv.org/pdf/1810.10144.pdf"></section>
-            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
-
             <section>
-                <h3><u>The Reconstruction Library</u></h3>
+                <h3><u>The Reconstruction Visualization</u></h3>
                 <ul class="timeline">
                     <li class="fragment">I call it <span class="green">Shape Reconstruction</span></li>
                     <li class="fragment">Language: <span class="green">JavaScript</span></li>
@@ -331,7 +348,7 @@
             </section>
 
             <section>
-                <h3><u>Directions</u></h3>
+                <h3><u>Future Work</u></h3>
                 <ul class="timeline">
                     <li class="fragment">Homotopy-equivalent reconstruction of higher-dimensional geodesic spaces?</li>
                     <li class="fragment">Geometric reconstruction of higher-dimensional geodesic spaces?</span>
@@ -341,9 +358,8 @@
             </section>
 
             <!-- Shape Comparison -->
-
             <section>
-                <h3>2. Comparison</h3>
+                <h3><green>2</green>. Comparison</h3>
             </section>
             <section>
                 <aside class="notes">
@@ -573,9 +589,7 @@
                     </div>
                 </section>
             </section>
-
-            <section data-background-iframe="https://arxiv.org/pdf/1912.13008.pdf"></section>
-
+            
             <section>
                 <h3><u>Directions</u></h3>
                 <ul class="timeline">
@@ -598,6 +612,7 @@
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/math/math.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
@@ -615,8 +630,7 @@
                     webFont: "Neo-Euler"
                 }
             },
-            // Learn about plugins: https://revealjs.com/plugins/
-            plugins: [ RevealHighlight, RevealNotes ]
+            plugins: [ RevealHighlight, RevealNotes, RevealMath ]
         });
     </script>
     <!-- Scripts end -->
