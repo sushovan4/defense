@@ -193,6 +193,58 @@
                 </section>
             </section>
 
+            <section id="hausdorff">
+                <h3><u>Hausdorff Distance</u></h3>
+                <section id="hausdorff">
+                    <br>
+                    <img width="300" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/atob.png" />
+                    <p style="font-size:0.5em">Nearest neighbor distance (
+                        <span class="red">red points</span> $\to$ <span class="green"> green points</span>).
+                    </p>
+
+                    <definition class="fragment" data-header="Directed Hausdorff Distance">
+                        Let $A,B\subseteq\mathbb{R}^N$. The <span class="red">directed Hausdorff distance
+	                </span> from $A$ to $B$ is defined by $$\overrightarrow{d}_H(A,B)=\sup_{a\in A}\inf_{b\in B}\|a-b\|.$$
+                    </definition>
+                </section>
+
+                <section>
+                    <definition data-header="(Undirected) Hausdorff Distance">
+                        For any two compact $X,Y\subset\mathbb{R}^N$, $$d_H(X,Y)=\max\left\{\overrightarrow{d}_H(X,Y),\overrightarrow{d}_H(Y,X)\right\}$$
+                    </definition>
+                    <br>
+                    <definition class="fragment fade-in" data-header="Hausdorff Distance">
+                        For any two compact $X,Y\subset(Z,d_Z)$, $$d^Z_H(X,Y)=\max\left\{\overrightarrow{d}^Z_H(X,Y),\overrightarrow{d}^Z_H(Y,X)\right\}$$
+                    </definition>
+                </section>
+
+                <section>
+                    <ol class="green">
+                        <li>$d^Z_H(X,Y)\geq0$,</li><br>
+                        <li class="fragment">$d^Z_H(X,Y)=d^Z_H(Y,X)$,</li><br>
+                        <li class="fragment">$d^Z_H(X,Y)=0\iff X=Y$, and </li><br>
+                        <li class="fragment">$d^Z_H(A,C)\leq d^Z_H(A,B)+d^Z_H(B,C)$.</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <block>
+                        The Hausdorff distance induces a
+                        <green>complete metric space</green> on the set of all
+                        <green>compact</green> subsets of a metric space.
+                    </block>
+
+                    <br><br>
+
+                    <div class="fragment fade-in">
+                        <div class="divider">💡</div><br> $d_H$ is sensitive to
+                        <span class="red">Shape</span> +
+                        <span class="red">Size</span> +
+                        <span class="red">Placement</span>.
+                    </div>
+                </section>
+            </section>
+            
             <section>
                 <h3><u>Problem Statement</u></h3>
                 <section>
@@ -348,15 +400,11 @@
             </section>
 
             <section>
-                <h3><u>Future Work</u></h3>
-                <ul class="timeline">
-                    <li class="fragment">Homotopy-equivalent reconstruction of higher-dimensional geodesic spaces?</li>
-                    <li class="fragment">Geometric reconstruction of higher-dimensional geodesic spaces?</span>
-                    </li>
-                    <li class="fragment">Can the library support custom user-input?</li>
-                </ul>
+                <h3><u>Non-Hausdorff Noise Model</u></h3>
+                <img width="70%" src="wedge-nh.svg">
+                <br>
+                The sample has distant <red>outliers</red>
             </section>
-
             <!-- Shape Comparison -->
             <section>
                 <h3><green>2</green>. Comparison</h3>
@@ -370,7 +418,6 @@
                     compare shapes at a very early age by ingenuity of learning
                     algorithms coded in human perception. However, encoding them
                     in machines is a big challenge.
-
                 </aside>
                 <h3><u>Motivation</u></h3>
 
@@ -436,58 +483,6 @@
                         <li class="fragment fade-in">
                             $d_?(X,Y)$ small $\iff$ $X=Y$ up to a class of deformation.</li>
                     </ul>
-                </section>
-            </section>
-
-            <section id="hausdorff">
-                <h3><u>Hausdorff Distance</u></h3>
-                <section id="hausdorff">
-                    <br>
-                    <img width="300" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/atob.png" />
-                    <p style="font-size:0.5em">Nearest neighbor distance (
-                        <span class="red">red points</span> $\to$ <span class="green"> green points</span>).
-                    </p>
-
-                    <definition class="fragment" data-header="Directed Hausdorff Distance">
-                        Let $A,B\subseteq\mathbb{R}^N$. The <span class="red">directed Hausdorff distance
-	      </span> from $A$ to $B$ is defined by $$\overrightarrow{d}_H(A,B)=\sup_{a\in A}\inf_{b\in B}\|a-b\|.$$
-                    </definition>
-                </section>
-
-                <section>
-                    <definition data-header="(Undirected) Hausdorff Distance">
-                        For any two compact $X,Y\subset\mathbb{R}^N$, $$d_H(X,Y)=\max\left\{\overrightarrow{d}_H(X,Y),\overrightarrow{d}_H(Y,X)\right\}$$
-                    </definition>
-                    <br>
-                    <definition class="fragment fade-in" data-header="Hausdorff Distance">
-                        For any two compact $X,Y\subset(Z,d_Z)$, $$d^Z_H(X,Y)=\max\left\{\overrightarrow{d}^Z_H(X,Y),\overrightarrow{d}^Z_H(Y,X)\right\}$$
-                    </definition>
-                </section>
-
-                <section>
-                    <ol class="green">
-                        <li>$d^Z_H(X,Y)\geq0$,</li><br>
-                        <li class="fragment">$d^Z_H(X,Y)=d^Z_H(Y,X)$,</li><br>
-                        <li class="fragment">$d^Z_H(X,Y)=0\iff X=Y$, and </li><br>
-                        <li class="fragment">$d^Z_H(A,C)\leq d^Z_H(A,B)+d^Z_H(B,C)$.</li>
-                    </ol>
-                </section>
-
-                <section>
-                    <block>
-                        The Hausdorff distance induces a
-                        <green>complete metric space</green> on the set of all
-                        <green>compact</green> subsets of a metric space.
-                    </block>
-
-                    <br><br>
-
-                    <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> $d_H$ is sensitive to
-                        <span class="red">Shape</span> +
-                        <span class="red">Size</span> +
-                        <span class="red">Placement</span>.
-                    </div>
                 </section>
             </section>
             <!-- Shape ends -->
