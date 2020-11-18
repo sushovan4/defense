@@ -197,34 +197,18 @@
                 <h3><u>Hausdorff Distance</u></h3>
                 <section id="hausdorff">
                     <br>
-                    <img width="300" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/atob.png" />
-                    <p style="font-size:0.5em">Nearest neighbor distance (
-                        <span class="red">red points</span> $\to$ <span class="green"> green points</span>).
-                    </p>
-
-                    <definition class="fragment" data-header="Directed Hausdorff Distance">
-                        Let $A,B\subseteq\mathbb{R}^N$. The <span class="red">directed Hausdorff distance
-	                </span> from $A$ to $B$ is defined by $$\overrightarrow{d}_H(A,B)=\sup_{a\in A}\inf_{b\in B}\|a-b\|.$$
-                    </definition>
-                </section>
-
-                <section>
-                    <definition data-header="(Undirected) Hausdorff Distance">
-                        For any two compact $X,Y\subset\mathbb{R}^N$, $$d_H(X,Y)=\max\left\{\overrightarrow{d}_H(X,Y),\overrightarrow{d}_H(Y,X)\right\}$$
-                    </definition>
+                    <img width="300" src="h.svg" />
                     <br>
-                    <definition class="fragment fade-in" data-header="Hausdorff Distance">
-                        For any two compact $X,Y\subset(Z,d_Z)$, $$d^Z_H(X,Y)=\max\left\{\overrightarrow{d}^Z_H(X,Y),\overrightarrow{d}^Z_H(Y,X)\right\}$$
-                    </definition>
+                    Hausdorff distance is $\max\{$<green>$a$</green>, <red>$b$</red>$\}$.
                 </section>
 
                 <section>
-                    <ol class="green">
-                        <li>$d^Z_H(X,Y)\geq0$,</li><br>
-                        <li class="fragment">$d^Z_H(X,Y)=d^Z_H(Y,X)$,</li><br>
-                        <li class="fragment">$d^Z_H(X,Y)=0\iff X=Y$, and </li><br>
-                        <li class="fragment">$d^Z_H(A,C)\leq d^Z_H(A,B)+d^Z_H(B,C)$.</li>
-                    </ol>
+                    <definition class="fragment" data-header="Directed Hausdorff Distance">
+                        Let $A,B\subseteq\mathbb{R}^N$. Their <green>Hausdorff
+                        distance</green> is defined by <br>
+                        $d_H(A,B)=\max\{$<green>$\sup_{a\in A}\inf_{b\in B}\|a-b\|$</green>,
+                                        <red>$\sup_{b\in B}\inf_{a\in A}\|a-b\|$</red>$\}.$
+                    </definition>
                 </section>
 
                 <section>
@@ -237,7 +221,8 @@
                     <br><br>
 
                     <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> $d_H$ is sensitive to
+                        <div class="divider">💡</div><br> 
+                        $d_H$ is sensitive to
                         <span class="red">Shape</span> +
                         <span class="red">Size</span> +
                         <span class="red">Placement</span>.
