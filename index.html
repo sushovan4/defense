@@ -57,23 +57,19 @@
                     </li>
 
                     <li class="fragment">
-                        <green>Shape Reconstruction Library</green>
+                        <green>Geodesic Spaces and their Reconstruction</green>
                     </li>
 
                     <li class="fragment">
-                        Discrete Morse Theory
+                        Non-Hausdorff Density Models
                     </li>
 
                     <li class="fragment">
-                        Density Models and Graph Reconstruction
+                        Discrete Morse Theory in Graph Reconstruction
                     </li>
 
                     <li class="fragment">
                         <red>Introduction to Shape Comparison</red>
-                    </li>
-
-                    <li class="fragment">
-                        <red>Hausdorff and Gromov-Hausdorff Distance</red>
                     </li>
 
                     <li class="fragment">
@@ -95,8 +91,8 @@
                 <section id="brit">
                     <img width="250" src="https://www.montana.edu/assets/images/a6ewi/image15.jpg" />
                     <p>
-                        Brittany Fasy (co-adviser)<br>
-                        <span class="green">School of Computing, Montana State</span>
+                        Brittany Fasy<br>
+                        <span class="green">School of Computing, Montana State University</span>
                     </p>
                 </section>
                 <section id="rafal">
@@ -178,6 +174,10 @@
                         <red>$S^1\wedge S^1$</red>
                         <green>(www.smajhi.com/shape-reconstruction)</green>
                     </p>
+                    <aside class="notes">
+                        My research is broadly in topological data analysis. In my research, I looked at a data like this through the lenses of topology and geometry. I considered data with intrinsic topological and geometric embellishment. Cases where known statistical inference
+                        techniques might fall short, and topological reconstruction/comparison tools are deemed a better alternative.
+                    </aside>
                 </section>
                 <section>
                     <img src="https://raw.githubusercontent.com/sushovan4/defense/master/berlin.jpg">
@@ -202,17 +202,22 @@
                     <img width="300" src="https://raw.githubusercontent.com/sushovan4/defense/master/h.svg" />
                     <br> Hausdorff distance is $\max\{$
                     <green>$a$</green>,
-                    <red>$b$</red>$\}$.
+                    <red>$b$</red>$\}=$
+                    <green>$a$</green>
                 </section>
 
                 <section>
-                    <definition class="fragment" data-header="Directed Hausdorff Distance">
-                        Let $A,B\subseteq\mathbb{R}^N$. Their
+                    <definition data-header="Hausdorff Distance">
+                        Let $A,B\subseteq(Z,d_Z)$. Their
                         <green>Hausdorff distance
-                        </green> is defined by <br> $d_H(A,B)=\max\{$
-                        <green>$\sup_{a\in A}\inf_{b\in B}\|a-b\|$</green>,
-                        <red>$\sup_{b\in B}\inf_{a\in A}\|a-b\|$</red>$\}.$
+                        </green> is defined by <br> $d_H^Z(A,B)=\max\{$
+                        <green>$\sup_{a\in A}\inf_{b\in B}d_Z(a,b)$</green>,
+                        <red>$\sup_{b\in B}\inf_{a\in A}d_Z(a,b)$</red>$\}.$
                     </definition>
+                    <br><br>
+                    <div class="fragment">
+                        The superscript is dropped if $Z=\mathbb{R}^N$
+                    </div>
                 </section>
 
                 <section>
@@ -223,9 +228,8 @@
                     </block>
 
                     <br><br>
-
                     <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> $d_H$ is sensitive to
+                        <div class="divider">💡</div><br> $d_H^Z(A,B)$ is sensitive to<br>
                         <span class="red">Shape</span> +
                         <span class="red">Size</span> +
                         <span class="red">Placement</span>.
@@ -251,16 +255,17 @@
                     </ul>
                 </section>
                 <section>
+                    <br>
                     <red>Q</red>: How to infer the topology of $X$ from a finite sample $S$?<br>
+                    <br>
                     <div class="fragment">
-                        <br>
                         <div class="divider">💡</div>
                         <br>
                         <green>&mdash;</green> Use topological methods<br>
                     </div>
                     <ul class="timeline" style="font-size: 0.8em">
                         <li class="fragment">Nerve Lemma</li>
-                        <li class="fragment">Vietoris-Rips, Cech Complex</li>
+                        <li class="fragment">Vietoris-Rips, &#268;ech Complex</li>
                         <li class="fragment">Discrete Morse Theory</li>
                     </ul>
                 </section>
@@ -269,9 +274,10 @@
                     <green>inference</green> even mean in such a reconstruction context?
                     <ul class="timeline" style="font-size: 0.7em">
                         <li class="fragment">Compute
-                            <green>$H_*(X)$ from $S$</green>
+                            <green>$H_*(X)$</green>
                             and/or
                             <green>$\pi_*(X,b)$</green>
+                            from $S$
                         </li>
                         <li class="fragment">Construct $\widetilde{X}$
                             <green>homotopy equivalent</green> to $X$</li>
