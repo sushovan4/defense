@@ -5,6 +5,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="http://smajhi.com/assets/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, 
 				   maximum-scale=1.0, user-scalable=no">
     <title>Sushovan Majhi: Thesis Defense</title>
@@ -120,14 +121,15 @@
                 <br><br>
                 <ul class="timeline" style="font-size:0.7em">
                     <li class="fragment">
-                        <green>Yusu Wang</green> and                         
+                        <green>Yusu Wang</green> and
                         <green>Facundo Memoli</green>, Ohio State University
                     </li>
                     <li class="fragment">
-                        <green>Helmut Alt</green>, Free University of Berlin 
+                        <green>Helmut Alt</green>, Free University of Berlin
                     </li>
                     <li class="fragment">
-                        <green>Mathematics</green> and <green>Computer Science</green> Department
+                        <green>Mathematics</green> and
+                        <green>Computer Science</green> Department
                     </li>
                 </ul>
             </section>
@@ -198,16 +200,18 @@
                 <section id="hausdorff">
                     <br>
                     <img width="300" src="https://raw.githubusercontent.com/sushovan4/defense/master/h.svg" />
-                    <br>
-                    Hausdorff distance is $\max\{$<green>$a$</green>, <red>$b$</red>$\}$.
+                    <br> Hausdorff distance is $\max\{$
+                    <green>$a$</green>,
+                    <red>$b$</red>$\}$.
                 </section>
 
                 <section>
                     <definition class="fragment" data-header="Directed Hausdorff Distance">
-                        Let $A,B\subseteq\mathbb{R}^N$. Their <green>Hausdorff
-                        distance</green> is defined by <br>
-                        $d_H(A,B)=\max\{$<green>$\sup_{a\in A}\inf_{b\in B}\|a-b\|$</green>,
-                                        <red>$\sup_{b\in B}\inf_{a\in A}\|a-b\|$</red>$\}.$
+                        Let $A,B\subseteq\mathbb{R}^N$. Their
+                        <green>Hausdorff distance
+                        </green> is defined by <br> $d_H(A,B)=\max\{$
+                        <green>$\sup_{a\in A}\inf_{b\in B}\|a-b\|$</green>,
+                        <red>$\sup_{b\in B}\inf_{a\in A}\|a-b\|$</red>$\}.$
                     </definition>
                 </section>
 
@@ -221,15 +225,14 @@
                     <br><br>
 
                     <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> 
-                        $d_H$ is sensitive to
+                        <div class="divider">💡</div><br> $d_H$ is sensitive to
                         <span class="red">Shape</span> +
                         <span class="red">Size</span> +
                         <span class="red">Placement</span>.
                     </div>
                 </section>
             </section>
-            
+
             <section>
                 <h3><u>Problem Statement</u></h3>
                 <section>
@@ -237,13 +240,13 @@
                         <li class="fragment">Let $X$ be a
                             <red>hidden</red> subset of $\mathbb{R}^N$</li>
                         <li class="fragment">
-                            We have a sample or a 
+                            We have a sample or a
                             <span class="green">point-cloud</span> $(S,\|\cdot\|)$
                         </li>
                         <li class="fragment">
                             $S$ is
-                            <span class="green">dense</span> around $X$,
-                            i.e., <green>$d_H(X,S)$</green> is small
+                            <span class="green">dense</span> around $X$, i.e.,
+                            <green>$d_H(X,S)$</green> is small
                         </li>
                     </ul>
                 </section>
@@ -262,14 +265,20 @@
                     </ul>
                 </section>
                 <section>
-                    <red>Q</red>: What does <green>inference</green> even mean in such a reconstruction context? 
+                    <red>Q</red>: What does
+                    <green>inference</green> even mean in such a reconstruction context?
                     <ul class="timeline" style="font-size: 0.7em">
-                        <li class="fragment">Compute <green>$H_*(X)$ from $S$</green> 
-                            and/or <green>$\pi_*(X,b)$</green></li>
-                        <li class="fragment">Construct $\widetilde{X}$ 
+                        <li class="fragment">Compute
+                            <green>$H_*(X)$ from $S$</green>
+                            and/or
+                            <green>$\pi_*(X,b)$</green>
+                        </li>
+                        <li class="fragment">Construct $\widetilde{X}$
                             <green>homotopy equivalent</green> to $X$</li>
-                        <li class="fragment">$\widetilde{X}$ has an <green>embedding</green> in $\mathbb{R}^N$</li>
-                        <li class="fragment">$\widetilde{X}$ is <green>geometrically close</green> to $X$</li>
+                        <li class="fragment">$\widetilde{X}$ has an
+                            <green>embedding</green> in $\mathbb{R}^N$</li>
+                        <li class="fragment">$\widetilde{X}$ is
+                            <green>geometrically close</green> to $X$</li>
                     </ul>
                 </section>
             </section>
@@ -289,15 +298,15 @@
             <section id="reconstruction">
                 <h3><u>Data <span class="green">⟶</span> Shape</u></h3>
                 <h6>Vietoris-Rips at scale $\epsilon>0$</h6>
-                <div style="display: flex">  
+                <div style="display: flex">
                     <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/data.png" />
 
-                <span class="green">⟶</span>
-                <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
-            </div>
-            <div class="fragment">
+                    <span class="green">⟶</span>
+                    <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
+                </div>
+                <div class="fragment">
                     <definition data-header="Vietoris-Rips Complex">
-                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex. 
+                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex.
                     </definition>
                 </div>
             </section>
@@ -307,12 +316,12 @@
                 <section>
                     (Niyogi, Smale.)
                     <br> small $\epsilon$ + dense sample
-                    <br>=<br> Cech complex is a good reconstruction for <span class="green">manifolds</span>.    
+                    <br>=<br> Cech complex is a good reconstruction for <span class="green">manifolds</span>.
                 </section>
                 <section>
                     (Adams H. et al.)
                     <br> small $\epsilon$ + dense sample
-                    <br>=<br> Rips complex is a good reconstruction for <span class="green">manifolds</span>.    
+                    <br>=<br> Rips complex is a good reconstruction for <span class="green">manifolds</span>.
                 </section>
             </section>
             <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
@@ -343,34 +352,26 @@
                 <h3><u>Topological Reconstruction</u></h3>
                 <section>
                     <block data-header="<u>Rips Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
+                        If $d_H(X,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
                 <section>
                     <block data-header="<u>Cech Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
+                        If $d_H(X,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
             </section>
             <section>
                 <h3><u>Geometric Reconstruction</u></h3>
                 <section>
                     <block data-header="<u>Rips Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
+                        If $d_H(X,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
                 <section>
                     <block data-header="<u>Cech Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
+                        If $d_H(X,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
             </section>
 
@@ -387,22 +388,18 @@
             <section>
                 <h3><u>Non-Hausdorff Noise Model</u></h3>
                 <img width="70%" src="wedge-nh.svg">
-                <br>
-                The sample has distant <red>outliers</red>
+                <br> The sample has distant
+                <red>outliers</red>
             </section>
             <!-- Shape Comparison -->
             <section>
-                <h3><green>2</green>. Comparison</h3>
+                <h3>
+                    <green>2</green>. Comparison</h3>
             </section>
             <section>
                 <aside class="notes">
-                    Shape Comparison is an applied field of research. It has
-                    evolved a lot in the last decade, however there are yet a
-                    lot to be done. The primary goal is to distinguish shape
-                    that are visually distinct. We get trained very quickly to
-                    compare shapes at a very early age by ingenuity of learning
-                    algorithms coded in human perception. However, encoding them
-                    in machines is a big challenge.
+                    Shape Comparison is an applied field of research. It has evolved a lot in the last decade, however there are yet a lot to be done. The primary goal is to distinguish shape that are visually distinct. We get trained very quickly to compare shapes at a
+                    very early age by ingenuity of learning algorithms coded in human perception. However, encoding them in machines is a big challenge.
                 </aside>
                 <h3><u>Motivation</u></h3>
 
@@ -569,7 +566,7 @@
                     </div>
                 </section>
             </section>
-            
+
             <section>
                 <h3><u>Directions</u></h3>
                 <ul class="timeline">
@@ -593,6 +590,7 @@
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
     <script src="plugin/math/math.js"></script>
+    <script src="js/custom.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
@@ -610,7 +608,7 @@
                     webFont: "Neo-Euler"
                 }
             },
-            plugins: [ RevealHighlight, RevealNotes, RevealMath ]
+            plugins: [RevealHighlight, RevealNotes, RevealMath]
         });
     </script>
     <!-- Scripts end -->
