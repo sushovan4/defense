@@ -303,13 +303,19 @@
 
             <section id="reconstruction">
                 <h3><u>Data <span class="green">⟶</span> Shape</u></h3>
-                <h6>Vietoris-Rips at scale $\epsilon>0$</h6>
-                <div style="display: flex">
-                    <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/data.png" />
+                <section>
+                    <h6>Vietoris-Rips Complex at scale $\epsilon>0$</h6>
+                    <div style="display: flex">
+                        <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/data.png" />
 
-                    <span class="green">⟶</span>
-                    <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
-                </div>
+                        <span class="green">⟶</span>
+                        <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
+                    </div>
+                </section>
+                <section>
+                    <h6>&#268;ech Complex at scale $\epsilon>0$</h6>
+                    <red>(incomplete)</red>
+                </section>
                 <div class="fragment">
                     <definition data-header="Vietoris-Rips Complex">
                         In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex.
@@ -320,14 +326,16 @@
             <section id="manifold-recon">
                 <h3><u>Manifold Reconstruction</u></h3>
                 <section>
-                    (Niyogi, Smale.)
+                    (Niyogi, Smale et al.)
                     <br> small $\epsilon$ + dense sample
-                    <br>=<br> Cech complex is a good reconstruction for <span class="green">manifolds</span>.
+                    <br>=<br>
+                    <green>&#268;ech complex</green> is a good reconstruction for <span class="green">manifolds</span>
                 </section>
                 <section>
                     (Adams H. et al.)
                     <br> small $\epsilon$ + dense sample
-                    <br>=<br> Rips complex is a good reconstruction for <span class="green">manifolds</span>.
+                    <br>=<br>
+                    <green>Vietoris-Rips</green> complex is a good reconstruction for <span class="green">manifolds</span>.
                 </section>
             </section>
             <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
@@ -343,26 +351,26 @@
                 <section>
                     <ul class="timeline" style="font-size: 0.8em">
                         <li class="fragment">$X\subseteq\mathbb{R}^N$ is a
-                            <green>geodesic</green> subspace $(X,d_L)$.</li>
+                            <green>geodesic</green> subspace $(X,d_L)$</li>
                         <li class="fragment">
                             <green>Distortion</green>
-                            $\delta=\sup_{x\neq y}\frac{d_L(x,y)}{\|x-y\|}$ is finite.</li>
+                            $\delta=\sup_{x\neq y}\frac{d_L(x,y)}{\|x-y\|}$ is finite</li>
                         <li class="fragment">
-                            <green>Convexity radius</green> $\rho$ is positive.</li>
+                            <green>Convexity radius</green> $\rho$ is positive</li>
 
-                        <li class="fragment">$d_H(X,S)$ is small.</li>
+                        <li class="fragment">$d_H(X,S)$ is small</li>
                     </ul>
                 </section>
             </section>
             <section>
                 <h3><u>Topological Reconstruction</u></h3>
                 <section>
-                    <block data-header="<u>Rips Reconstruction</u>">
+                    <block data-header="<u>Vietoris-Rips Reconstruction</u>">
                         If $d_H(X,S)
                         <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
                 <section>
-                    <block data-header="<u>Cech Reconstruction</u>">
+                    <block data-header="<u>&#268;ech Reconstruction</u>">
                         If $d_H(X,S)
                         <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
@@ -370,25 +378,10 @@
             <section>
                 <h3><u>Geometric Reconstruction</u></h3>
                 <section>
-                    <block data-header="<u>Rips Reconstruction</u>">
-                        If $d_H(X,S)
-                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
+                    <block data-header="<u>Graph Reconstruction</u>">
+                        If $d_H(G,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, we can output $\widetilde{G}$ such that $$\widetilde{G}\simeq G,$$ and $d_H(G,\widetilde{G})$ is small. </block>
                 </section>
-                <section>
-                    <block data-header="<u>Cech Reconstruction</u>">
-                        If $d_H(X,S)
-                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
-                </section>
-            </section>
-
-            <section>
-                <h3><u>The Reconstruction Visualization</u></h3>
-                <ul class="timeline">
-                    <li class="fragment">I call it <span class="green">Shape Reconstruction</span></li>
-                    <li class="fragment">Language: <span class="green">JavaScript</span></li>
-                    <li class="fragment">Platform: (modern) Web Browsers</li>
-                    <li class="fragment">Hosted on <span class="green">Github</span></li>
-                </ul>
             </section>
 
             <section>
@@ -397,6 +390,12 @@
                 <br> The sample has distant
                 <red>outliers</red>
             </section>
+
+            <section>
+                <h3><u>Discrete Morse</u></h3>
+                <red>(incomplete)</red>
+            </section>
+
             <!-- Shape Comparison -->
             <section>
                 <h3>
@@ -482,7 +481,7 @@
                     <br> $d_H($◤, ◢ $)=$ large.
 
                     <br><br>
-                    <block style="font-size: 0.8em" class="fragment">
+                    <block style="font-size: 0.8em" class="fragment" data-header="">
                         Let $\mathcal{E}(N)$ denote the class of <span class="red">Euclidean isometries</span> or distance preserving maps $T:\mathbb{R}^N\to\mathbb{R}^N$ i.e. $\|T(a)-T(b)\|=\|a-b\|$.
                         <br><br>
                         <ol>
@@ -499,7 +498,7 @@
                 </section>
 
                 <section>
-                    <definition data-header="Normalized Hausdorff Distance">
+                    <definition data-header="Hausdorff Distance under Isometry">
                         For $X,Y\subseteq\mathbb{R}^N$, we define $$d_{H,iso}(X,Y)=\inf\limits_{T\in\mathcal{E}(N)}d_H\left(X,T(Y)\right)$$
                     </definition>
                     <br>
@@ -543,7 +542,7 @@
                 </section>
 
                 <section>
-                    <block data-header="<u>Majhi et al. '19</u>">
+                    <block data-header="">
                         For $X,Y\subseteq\mathbb{R}^1$, we have $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$ and the upper bound is tight.
                     </block>
                 </section>
