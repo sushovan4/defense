@@ -5,6 +5,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="http://smajhi.com/assets/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, 
 				   maximum-scale=1.0, user-scalable=no">
     <title>Sushovan Majhi: Thesis Defense</title>
@@ -66,8 +67,8 @@
                 <section id="brit">
                     <img width="250" src="https://www.montana.edu/assets/images/a6ewi/image15.jpg" />
                     <p>
-                        Brittany Fasy (co-adviser)<br>
-                        <span class="green">School of Computing, Montana State</span>
+                        Brittany Fasy<br>
+                        <span class="green">School of Computing, Montana State University</span>
                     </p>
                 </section>
                 <section id="rafal">
@@ -92,14 +93,15 @@
                 <br><br>
                 <ul class="timeline" style="font-size:0.7em">
                     <li class="fragment">
-                        <green>Yusu Wang</green> and                         
+                        <green>Yusu Wang</green> and
                         <green>Facundo Memoli</green>, Ohio State University
                     </li>
                     <li class="fragment">
-                        <green>Helmut Alt</green>, Free University of Berlin 
+                        <green>Helmut Alt</green>, Free University of Berlin
                     </li>
                     <li class="fragment">
-                        <green>Mathematics</green> and <green>Computer Science</green> Department
+                        <green>Mathematics</green> and
+                        <green>Computer Science</green> Department
                     </li>
                 </ul>
             </section>
@@ -185,6 +187,10 @@
                         <red>$S^1\wedge S^1$</red>
                         <green>(www.smajhi.com/shape-reconstruction)</green>
                     </p>
+                    <aside class="notes">
+                        My research is broadly in topological data analysis. In my research, I looked at a data like this through the lenses of topology and geometry. I considered data with intrinsic topological and geometric embellishment. Cases where known statistical inference
+                        techniques might fall short, and topological reconstruction/comparison tools are deemed a better alternative.
+                    </aside>
                 </section>
                 <section>
                     <img src="https://raw.githubusercontent.com/sushovan4/defense/master/berlin.jpg">
@@ -207,17 +213,24 @@
                 <section id="hausdorff">
                     <br>
                     <img width="300" src="https://raw.githubusercontent.com/sushovan4/defense/master/h.svg" />
-                    <br>
-                    Hausdorff distance is $\max\{$<green>$a$</green>, <red>$b$</red>$\}$.
+                    <br> Hausdorff distance is $\max\{$
+                    <green>$a$</green>,
+                    <red>$b$</red>$\}=$
+                    <green>$a$</green>
                 </section>
 
                 <section>
-                    <definition class="fragment" data-header="Directed Hausdorff Distance">
-                        Let $A,B\subseteq\mathbb{R}^N$. Their <green>Hausdorff
-                        distance</green> is defined by <br>
-                        $d_H(A,B)=\max\{$<green>$\sup_{a\in A}\inf_{b\in B}\|a-b\|$</green>,
-                                        <red>$\sup_{b\in B}\inf_{a\in A}\|a-b\|$</red>$\}.$
+                    <definition data-header="Hausdorff Distance">
+                        Let $A,B\subseteq(Z,d_Z)$. Their
+                        <green>Hausdorff distance
+                        </green> is defined by <br> $d_H^Z(A,B)=\max\{$
+                        <green>$\sup_{a\in A}\inf_{b\in B}d_Z(a,b)$</green>,
+                        <red>$\sup_{b\in B}\inf_{a\in A}d_Z(a,b)$</red>$\}.$
                     </definition>
+                    <br><br>
+                    <div class="fragment">
+                        The superscript is dropped if $Z=\mathbb{R}^N$
+                    </div>
                 </section>
 
                 <section>
@@ -228,17 +241,15 @@
                     </block>
 
                     <br><br>
-
                     <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> 
-                        $d_H$ is sensitive to
+                        <div class="divider">💡</div><br> $d_H^Z(A,B)$ is sensitive to<br>
                         <span class="red">Shape</span> +
                         <span class="red">Size</span> +
                         <span class="red">Placement</span>.
                     </div>
                 </section>
             </section>
-            
+
             <section>
                 <h3><u>Problem Statement</u></h3>
                 <section>
@@ -246,39 +257,47 @@
                         <li class="fragment">Let $X$ be a
                             <red>hidden</red> subset of $\mathbb{R}^N$</li>
                         <li class="fragment">
-                            We have a sample or a 
+                            We have a sample or a
                             <span class="green">point-cloud</span> $(S,\|\cdot\|)$
                         </li>
                         <li class="fragment">
                             $S$ is
-                            <span class="green">dense</span> around $X$,
-                            i.e., <green>$d_H(X,S)$</green> is small
+                            <span class="green">dense</span> around $X$, i.e.,
+                            <green>$d_H(X,S)$</green> is small
                         </li>
                     </ul>
                 </section>
                 <section>
+                    <br>
                     <red>Q</red>: How to infer the topology of $X$ from a finite sample $S$?<br>
+                    <br>
                     <div class="fragment">
-                        <br>
                         <div class="divider">💡</div>
                         <br>
                         <green>&mdash;</green> Use topological methods<br>
                     </div>
                     <ul class="timeline" style="font-size: 0.8em">
                         <li class="fragment">Nerve Lemma</li>
-                        <li class="fragment">Vietoris-Rips, Cech Complex</li>
+                        <li class="fragment">Vietoris-Rips, &#268;ech Complex</li>
                         <li class="fragment">Discrete Morse Theory</li>
                     </ul>
                 </section>
                 <section>
-                    <red>Q</red>: What does <green>inference</green> even mean in such a reconstruction context? 
+                    <red>Q</red>: What does
+                    <green>inference</green> even mean in such a reconstruction context?
                     <ul class="timeline" style="font-size: 0.7em">
-                        <li class="fragment">Compute <green>$H_*(X)$ from $S$</green> 
-                            and/or <green>$\pi_*(X,b)$</green></li>
-                        <li class="fragment">Construct $\widetilde{X}$ 
+                        <li class="fragment">Compute
+                            <green>$H_*(X)$</green>
+                            and/or
+                            <green>$\pi_*(X,b)$</green>
+                            from $S$
+                        </li>
+                        <li class="fragment">Construct $\widetilde{X}$
                             <green>homotopy equivalent</green> to $X$</li>
-                        <li class="fragment">$\widetilde{X}$ has an <green>embedding</green> in $\mathbb{R}^N$</li>
-                        <li class="fragment">$\widetilde{X}$ is <green>geometrically close</green> to $X$</li>
+                        <li class="fragment">$\widetilde{X}$ has an
+                            <green>embedding</green> in $\mathbb{R}^N$</li>
+                        <li class="fragment">$\widetilde{X}$ is
+                            <green>geometrically close</green> to $X$</li>
                     </ul>
                 </section>
             </section>
@@ -297,16 +316,22 @@
 
             <section id="reconstruction">
                 <h3><u>Data <span class="green">⟶</span> Shape</u></h3>
-                <h6>Vietoris-Rips at scale $\epsilon>0$</h6>
-                <div style="display: flex">  
-                    <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/data.png" />
+                <section>
+                    <h6>Vietoris-Rips Complex at scale $\epsilon>0$</h6>
+                    <div style="display: flex">
+                        <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/data.png" />
 
-                <span class="green">⟶</span>
-                <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
-            </div>
-            <div class="fragment">
+                        <span class="green">⟶</span>
+                        <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
+                    </div>
+                </section>
+                <section>
+                    <h6>&#268;ech Complex at scale $\epsilon>0$</h6>
+                    <red>(incomplete)</red>
+                </section>
+                <div class="fragment">
                     <definition data-header="Vietoris-Rips Complex">
-                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex. 
+                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex.
                     </definition>
                 </div>
             </section>
@@ -314,14 +339,16 @@
             <section id="manifold-recon">
                 <h3><u>Manifold Reconstruction</u></h3>
                 <section>
-                    (Niyogi, Smale.)
+                    (Niyogi, Smale et al.)
                     <br> small $\epsilon$ + dense sample
-                    <br>=<br> Cech complex is a good reconstruction for <span class="green">manifolds</span>.    
+                    <br>=<br>
+                    <green>&#268;ech complex</green> is a good reconstruction for <span class="green">manifolds</span>
                 </section>
                 <section>
                     (Adams H. et al.)
                     <br> small $\epsilon$ + dense sample
-                    <br>=<br> Rips complex is a good reconstruction for <span class="green">manifolds</span>.    
+                    <br>=<br>
+                    <green>Vietoris-Rips</green> complex is a good reconstruction for <span class="green">manifolds</span>.
                 </section>
             </section>
             <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
@@ -337,84 +364,65 @@
                 <section>
                     <ul class="timeline" style="font-size: 0.8em">
                         <li class="fragment">$X\subseteq\mathbb{R}^N$ is a
-                            <green>geodesic</green> subspace $(X,d_L)$.</li>
+                            <green>geodesic</green> subspace $(X,d_L)$</li>
                         <li class="fragment">
                             <green>Distortion</green>
-                            $\delta=\sup_{x\neq y}\frac{d_L(x,y)}{\|x-y\|}$ is finite.</li>
+                            $\delta=\sup_{x\neq y}\frac{d_L(x,y)}{\|x-y\|}$ is finite</li>
                         <li class="fragment">
-                            <green>Convexity radius</green> $\rho$ is positive.</li>
+                            <green>Convexity radius</green> $\rho$ is positive</li>
 
-                        <li class="fragment">$d_H(X,S)$ is small.</li>
+                        <li class="fragment">$d_H(X,S)$ is small</li>
                     </ul>
                 </section>
             </section>
             <section>
                 <h3><u>Topological Reconstruction</u></h3>
                 <section>
-                    <block data-header="<u>Rips Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
+                    <block data-header="<u>Vietoris-Rips Reconstruction</u>">
+                        If $d_H(X,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
                 <section>
-                    <block data-header="<u>Cech Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
+                    <block data-header="<u>&#268;ech Reconstruction</u>">
+                        If $d_H(X,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
             </section>
             <section>
                 <h3><u>Geometric Reconstruction</u></h3>
                 <section>
-                    <block data-header="<u>Rips Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
+                    <block data-header="<u>Graph Reconstruction</u>">
+                        If $d_H(G,S)
+                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, we can output $\widetilde{G}$ such that $$\widetilde{G}\simeq G,$$ and $d_H(G,\widetilde{G})$ is small. </block>
                 </section>
-                <section>
-                    <block data-header="<u>Cech Reconstruction</u>">
-                        If $d_H(X,S) <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$,
-                        the image $$Im(j_*)\simeq\pi_*(X),$$ where
-                        $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$.
-                    </block>
-                </section>
-            </section>
-
-            <section>
-                <h3><u>The Reconstruction Visualization</u></h3>
-                <ul class="timeline">
-                    <li class="fragment">I call it <span class="green">Shape Reconstruction</span></li>
-                    <li class="fragment">Language: <span class="green">JavaScript</span></li>
-                    <li class="fragment">Platform: (modern) Web Browsers</li>
-                    <li class="fragment">Hosted on <span class="green">Github</span></li>
-                </ul>
             </section>
 
             <section>
                 <h3><u>Non-Hausdorff Noise Model</u></h3>
                 <img width="70%" src="wedge-nh.svg">
-                <br>
-                The sample has distant <red>outliers</red>
+                <br> The sample has distant
+                <red>outliers</red>
             </section>
 
+            <section>
+                <h3><u>Discrete Morse</u></h3>
+                <red>(incomplete)</red>
+            </section>
+
+<<<<<<< HEAD
             <section data-background-iframe="https://www.tickcounter.com/timer"></section>
             
+=======
+>>>>>>> 8a19ce0e4532613abd3c67ac17a3b56dcd437515
             <!-- Shape Comparison -->
             <section>
-                <h3><green>2</green>. Comparison</h3>
+                <h3>
+                    <green>2</green>. Comparison</h3>
             </section>
             <section>
                 <aside class="notes">
-                    Shape Comparison is an applied field of research. It has
-                    evolved a lot in the last decade, however there are yet a
-                    lot to be done. The primary goal is to distinguish shape
-                    that are visually distinct. We get trained very quickly to
-                    compare shapes at a very early age by ingenuity of learning
-                    algorithms coded in human perception. However, encoding them
-                    in machines is a big challenge.
+                    Shape Comparison is an applied field of research. It has evolved a lot in the last decade, however there are yet a lot to be done. The primary goal is to distinguish shape that are visually distinct. We get trained very quickly to compare shapes at a
+                    very early age by ingenuity of learning algorithms coded in human perception. However, encoding them in machines is a big challenge.
                 </aside>
                 <h3><u>Motivation</u></h3>
 
@@ -491,7 +499,7 @@
                     <br> $d_H($◤, ◢ $)=$ large.
 
                     <br><br>
-                    <block style="font-size: 0.8em" class="fragment">
+                    <block style="font-size: 0.8em" class="fragment" data-header="">
                         Let $\mathcal{E}(N)$ denote the class of <span class="red">Euclidean isometries</span> or distance preserving maps $T:\mathbb{R}^N\to\mathbb{R}^N$ i.e. $\|T(a)-T(b)\|=\|a-b\|$.
                         <br><br>
                         <ol>
@@ -508,7 +516,7 @@
                 </section>
 
                 <section>
-                    <definition data-header="Normalized Hausdorff Distance">
+                    <definition data-header="Hausdorff Distance under Isometry">
                         For $X,Y\subseteq\mathbb{R}^N$, we define $$d_{H,iso}(X,Y)=\inf\limits_{T\in\mathcal{E}(N)}d_H\left(X,T(Y)\right)$$
                     </definition>
                     <br>
@@ -552,7 +560,7 @@
                 </section>
 
                 <section>
-                    <block data-header="<u>Majhi et al. '19</u>">
+                    <block data-header="">
                         For $X,Y\subseteq\mathbb{R}^1$, we have $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$ and the upper bound is tight.
                     </block>
                 </section>
@@ -581,7 +589,7 @@
                     </div>
                 </section>
             </section>
-            
+
             <section>
                 <h3><u>Directions</u></h3>
                 <ul class="timeline">
@@ -605,6 +613,7 @@
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
     <script src="plugin/math/math.js"></script>
+    <script src="js/custom.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
@@ -622,7 +631,7 @@
                     webFont: "Neo-Euler"
                 }
             },
-            plugins: [ RevealHighlight, RevealNotes, RevealMath ]
+            plugins: [RevealHighlight, RevealNotes, RevealMath]
         });
     </script>
     <!-- Scripts end -->
