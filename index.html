@@ -22,40 +22,40 @@
     <div class="reveal">
         <div class="slides">
             <!-- Title -->
-            <section id="title">
-
-                <h4><u>Topological Methods<br> in<br> Shape Reconstruction
+            <section id="title" data-timing="60">
+                <h4><u>Topological Methods<br> in<br> 
+                    Shape Reconstruction
                 	and
 					Comparison</u>
                 </h4>
-                <h6 style="font-style: italic">
-                    <green>Sushovan MAJHI</green>
-                </h6>
-                <span style="font-size:0.7em">Thesis Defense<br>November 25, 2020</span>
+                    
+                <span style="font-size:0.7em"><green>Sushovan Majhi</green>, Thesis Defense<br>November 25, 2020</span>
                 <br>
 
                 <img width="150" src="https://raw.githubusercontent.com/sushovan4/defense/master/qr.png" />
                 <br>
-                <span style="font-size:0.5em">
-					Scan the above QR or go to the following url:
-				</span>
-                <br>
-                <span class="green">smajhi.com/defense</span>
-
+                Slides: <a href="https://smajhi.com/defense"><span class="green"><u>smajhi.com/defense</u></span></a>
+                <br><br>
+                Thesis: <a href="https://smajhi.com/thesis"><span class="green"><u>smajhi.com/thesis</u></span></a>
                 <aside class="notes">
-                    Good morning, everyone. Thank you all for joining me today.
+                    Good morning, everyone. Thank you all for fitting the talk in your busy schedule.
                     <br>
                     To get a copy of my slides online, please scan the QR code or go to 
-                    'smajhi.com/defense' using your browser. 
-
-
+                    'smajhi.com/defense' using your browser. For the talk, I am using a technology, known as multiplexing --
+                    you get live updates on your device when I move around the slides. 
+                    Also, a copy of my thesis is available at 'smajhi.com/thesis'
+                    <br><br>
+                    I already took six years, so without further adieu, let's get started. 
                 </aside>
             </section>
             <!-- Title ends -->
-
-
+          
             <!-- People -->
             <section id="collaborators">
+                <aside class="notes">
+                    First of all, I would like to thank my thesis adviser Carola Wenk -- for having me her student.  
+                </aside>
+
                 <h3><u>Collaborators</u></h3>
                 <section id="carola">
                     <img width="500" src="https://news.tulane.edu/sites/news/files/080916_carola-wenk800_617_pbc.jpg" />
@@ -107,7 +107,17 @@
             </section>
             
             <section id="talk">
-                <h3><u>The Manifesto</u></h3>
+                <section>
+                    <img width="65%" src="WordArt.png">   
+                </section>
+
+                    <aside class="notes">
+                    For my PhD, I studied reconstruction and comparison of shapes, and developed
+                    techniques inspired by concepts and results from Geometry and Topology. 
+                    The contribution 
+                    </aside>
+                
+                    <h3><u>The Manifesto</u></h3>
                 <ul class="timeline" style="font-size:0.6em">
                     <li class="fragment">
                         <green>Introduction to Shape Reconstruction</green>
@@ -409,11 +419,6 @@
                 <red>(incomplete)</red>
             </section>
 
-<<<<<<< HEAD
-            <section data-background-iframe="https://www.tickcounter.com/timer"></section>
-            
-=======
->>>>>>> 8a19ce0e4532613abd3c67ac17a3b56dcd437515
             <!-- Shape Comparison -->
             <section>
                 <h3>
@@ -617,13 +622,12 @@
     <script>
         Reveal.initialize({
             hash: true,
+            totalTime: 3000,
             controls: true,
             controlsTutorial: true,
             controlsLayout: 'edge',
             progress: true,
-            defaultTiming: 120,
             slideNumber: true,
-            hash: true,
             keyboard: true,
             center: true,
             math: {
