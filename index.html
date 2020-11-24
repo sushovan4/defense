@@ -119,10 +119,8 @@
 
                 <section>
                     <aside class="notes">
-                        We open up the first part by introducing you to the problem and applications of shape reconstruction. Then, we discuss two topological concepts --- cech and vietoris-rips complex, which we are going to use for the reconstruction techniques we developed.
-                        <br> Then we present the reconstruction results we bring to the table for geodesic spaces. We conclude the first part leaving a few remarks, which we think can certainly provide future research directions to some of my audience.
-                        <br>
-
+                        We open up the first part by introducing you to the problem and applications of shape reconstruction. Then, we discuss the concept of vietoris-rips complex, its application in shape reconstruction and shortcomings.
+                        <br> Then we present the reconstruction results we bring to the table for geodesic spaces.
                     </aside>
                     <br>
                     <ul class="timeline" style="font-size:0.6em">
@@ -131,7 +129,7 @@
                         </li>
 
                         <li class="fragment">
-                            &#268;ech and Vietoris-Rips Complexes
+                            Vietoris-Rips Complexes
                         </li>
 
                         <li class="fragment">
@@ -139,7 +137,7 @@
                         </li>
 
                         <li class="fragment">
-                            <red>Break</red>
+                            <red>Quick Break</red>
                         </li>
 
                         <li class="fragment">
@@ -179,7 +177,7 @@
                         However, more often than not, practical applications deal with shapes that are far from being a smooth manifold. The map of the city of New Orleans can be modelled as a graph, where the intersections are thought of as the vertices, whereas the roads the
                         edges.
                         <br> Clearly, a graph is NOT a manifold -- because of the branchings at the intersections and the corners.
-                        <br> As our story unfolds, we will see that the pinnacle of our development can handle graphs -- as well as even more sophisticated and more generalized version thereof -- that we call geodesic spaces.
+                        <br> As our story unfolds, we will see that our reconstruction results can handle graphs -- as well as more sophisticated and general class of shapes -- which we call geodesic spaces.
                     </aside>
 
                     <iframe width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=tulane%20university&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
@@ -190,7 +188,7 @@
             <!-- Shape ends -->
 
             <section>
-                <h3><u>Geodesic Shapes</u></h3>
+                <h3><u>Geodesic Spaces</u></h3>
                 <section>
                     <aside class="notes">
                         So, we first get the definition straight.
@@ -209,8 +207,7 @@
                 <section>
                     <aside class="notes">
                         With the definition of the geodesic spaces under our belts, it's time to quickly squirrel away two very important properties -- or rather attributes that become indispensible in the theory ahead.
-                        <br> For any two points, being farther apart and still having a unique shortest path or geodesic is a delicate tradeoff.
-                        <br> Farther two points go, slimmer the chance of having a unique geodesic between them becomes.
+
                         <br> To give you the perspective, the convexity radius of a circle of unit length is a quarter. Similarly, the convexity radius of a graph is ...
                     </aside>
                     <definition data-header="Distortion">
@@ -233,7 +230,6 @@
                         So far so good with the shape part of Shape Reconstruction --- now get ready for the fun part --- reconstruction.
                         <br> Our goal is very simple. Let's ask the data analytics question: Given a chunk of points --- called a sample --- in our case a point-cloud --- What can we say?
                         <br> Well --- the goal is not very lucid --- is it? What if I say a little bird told me that the points are sampled from a shape that a topologist might care about --- can we guess what the original shape was?
-                        <br> Cases where known statistical inference techniques might fall short, and topological reconstruction/comparison tools are deemed a better alternative.
                     </aside>
 
                     <img src="https://raw.githubusercontent.com/sushovan4/defense/master/sample_wedge.svg">
@@ -244,6 +240,7 @@
                 <section>
                     <aside class="notes">
                         Well --- if you have already guessed the buque of two two circles --- you are a topologist!
+                        <br> The data here inherit intrinsic topological embellishment. In such a use case, statistical inference techniques might fall short, and topological reconstruction tools are deemed a better alternative.
                     </aside>
                     <img src="https://raw.githubusercontent.com/sushovan4/defense/master/wedge.svg">
                     <p style="font-size: 0.6em">
@@ -322,7 +319,8 @@
 
                     <img width="500" src="h.svg" />
                     <div class="fragment">
-                        Hausdorff distance is $\max\{$
+                        Hausdorff distance $d_H^\mathbb{R^2}(A,B)$ is
+                        <br> $\max\{$
                         <green>$a$</green>,
                         <red>$b$ </red>$\}=$
                         <red>$b$</red>
@@ -436,7 +434,7 @@
                 <h3><u>Remarks on Reconstruction</u></h3>
             </section>
 
-            <section data-background-iframe="https://www.tickcounter.com/timer">    
+            <section data-background-iframe="https://www.tickcounter.com/timer">
             </section>
             <!-- Shape Comparison -->
             <section id="part-II">
