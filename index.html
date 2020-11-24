@@ -436,22 +436,22 @@
             </section>
 
             <section>
-                <aside class="notes">
-                    Shape Comparison is an applied field of research. It has evolved a lot in the last decade, however there are yet a lot to be done. The primary goal is to distinguish shape that are visually distinct. We get trained very quickly to compare shapes at a
-                    very early age by ingenuity of learning algorithms coded in human perception. However, encoding them in machines is a big challenge.
-                </aside>
                 <h3><u>Motivation</u></h3>
 
                 <section id="distinguish">
+                    <aside class="notes">
+                        Shape Comparison is an applied field of research. It has evolved a lot in the last decade, however there are yet a lot to be done. The primary goal is to distinguish shape that are visually distinct. We get trained very quickly to compare shapes at a
+                        very early age by the learning algorithms coded in human perception. However, encoding them in machines is a big challenge.
+                    </aside>
                     <red>1</red>. Distinguish Shapes
                     <div class="container">
                         <div class="col">
-                            <img width="180" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/circle.png">
-                            <br>circle
-                        </div>
-                        <div class="col">
                             <img width="250" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/triangle.png">
                             <br>triangle
+                        </div>
+                        <div class="col">
+                            <img width="180" src="https://raw.githubusercontent.com/sushovan4/gh-presentation/master/circle.png">
+                            <br>circle
                         </div>
                     </div>
                 </section>
@@ -472,6 +472,10 @@
                 </section>
 
                 <section id="quality">
+                    <aside class="notes">
+                        Shape comparison is also a fundamental aspect of shape reconstruction. It gives us a way to give quality guarantees for reconstruction algorithms --- or to discern if an algorithm performs better than others.
+                        <br> Shown here the outputs from two map construction algorithms on the same GPS data for the city of Berlin, how to tell which one is better?
+                    </aside>
                     <span class="red">3</span>. Quality Guarantee
                     <div class="container">
                         <div class="col">
@@ -488,19 +492,20 @@
             </section>
 
             <section>
+                <aside class="notes">
+
+                </aside>
                 <h3><u>Shape Comparison</u></h3>
                 <section>
-                    A shape can be modeled as a metric space $(X,d_X)$.
-                    <br>
                     <p class="fragment fade-in">We need an appropriate notion of a <span class="red">distance
 		measure</span> $d_?(X,Y)$ so that </p>
                     <br>
-                    <ul style="font-size: 0.7em">
+                    <ul style="font-size: 0.8em" class="timeline">
                         <li class="fragment fade-in">
                             $d_?(X,Y)$ defines a pseudo-metric on the class of metric spaces.
-                        </li><br>
+                        </li>
                         <li class="fragment fade-in">
-                            $d_?(X,Y)$ large $\iff$ very different shape</li><br>
+                            $d_?(X,Y)$ large $\iff$ very different shape</li>
                         <li class="fragment fade-in">
                             $d_?(X,Y)$ small $\iff$ $X=Y$ up to a class of deformation.</li>
                     </ul>
@@ -510,9 +515,8 @@
 
             <section>
                 <h3><u>Hausdorff under Isometry</u></h3>
-
                 <section>
-                    <br> $d_H($◤, ◢ $)=$ large.
+                    <br> $d_H^\mathbb{R^2}($◤, ◢ $)=$ large.
 
                     <br><br>
                     <block style="font-size: 0.8em" class="fragment" data-header="">
@@ -533,13 +537,13 @@
 
                 <section>
                     <definition data-header="Hausdorff Distance under Isometry">
-                        For $X,Y\subseteq\mathbb{R}^N$, we define $$d_{H,iso}(X,Y)=\inf\limits_{T\in\mathcal{E}(N)}d_H\left(X,T(Y)\right)$$
+                        For $X,Y\subseteq\mathbb{R}^N$, we define $$d_{H,iso}(X,Y)=\inf\limits_{T\in\mathcal{E}(N)}d_H^{\mathbb{R}^N}\left(X,T(Y)\right)$$
                     </definition>
                     <br>
                     <div class="fragment fade-in">
                         <div class="divider">💡</div><br> $d_{H,iso}$ is sensitive to
-                        <span class="red">Shape</span> +
-                        <span class="red">Size</span> +
+                        <span class="red">Shape</span>,
+                        <span class="red">Size</span>, and
                         <strike class="red">Placement</strike>.
                         <br> $d_{H,iso}($◤, ◢ $)=0$.
                     </div>
@@ -568,16 +572,24 @@
                 <h3><u>$d_{GH}$ vs $d_{H,iso}$</u></h3>
 
                 <section>
-                    Let $X,Y\subseteq(\mathbb{R}^N,\|\cdot\|)$ be compact. Then, both $d_{GH}(X,Y)$ and $d_{H,iso}(X,Y)$ are defined.
-
-                    <block class="fragment fade-in" data-header="<u>Memoli '12</u>">
-                        $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq c_N\sqrt{Md_{GH}(X,Y)},$$ where $M=\max\{diam(X),diam(Y)\}$.
-                    </block>
+                    Let $X,Y\subseteq\mathbb{R}^N$ be compact. Is $d_{GH}(X,Y)=d_{H,iso}(X,Y)$?
+                    <br><br>
+                    <div class="fragment">
+                        <div class="divider">💡</div><br>
+                        <ul class="timeline" style="font-size: 0.8em;">
+                            <li>
+                                <cite>memoli_theoretical_2005</cite>: $d_{GH}(X,Y)\neq d_{H,iso}(X,Y)$ for $N=2,3,\ldots$.
+                            </li>
+                            <li class="fragment">
+                                What happens if $N=1$?
+                            </li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section>
-                    <block data-header="">
-                        For $X,Y\subseteq\mathbb{R}^1$, we have $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$ and the upper bound is tight.
+                    <block data-header="The Real Line Case <cite>majhi2019approximating</cite><br><hr>">
+                        For compact $X,Y\subseteq\mathbb{R}^1$, we have $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$ and the upper bound is tight.
                     </block>
                 </section>
             </section>
@@ -586,30 +598,28 @@
                 <h3><u>Computing $d_{GH}$</u></h3>
 
                 <section>
-                    <block data-header="<u class='green'>Fact</u>">
+                    <block>
                         For $|X|,|Y|\leq k$, computing $d_{GH}(X,Y)$ takes $O(2^k)$ time.
                     </block>
                     <br>
-                    <block data-header="<u class='green'>Fact</u>" class="fragment fade-in">
+                    <block class="fragment fade-in">
                         For $X,Y\subset\mathbb{R}^1$ and $|X|,|Y|\leq k$, computing $d_{H,iso}(X,Y)$ takes $O(k\log{k})$ time.
-                    </block>
-                </section>
-
-                <section>
-                    <block data-header="">
-                        $$d_{GH}(X,Y)\leq d_{H,iso}(X,Y)\leq\left(1+\frac{1}{4}\right)d_{GH}(X,Y),$$
                     </block>
                     <br>
                     <div class="fragment">
-                        <div class="divider">💡</div><br> $d_{H,iso}$ approximates $d_{GH}$ with an approximate factor of $\left(1+\frac{1}{4}\right)$.
+                        <div class="divider">💡</div>
+                        <br>
+                        <span style="font-size: 0.75em;">
+                            $d_{H,iso}$ approximates $d_{GH}$ with an approximate factor of $\left(1+\frac{1}{4}\right)$.
+                        </span>
                     </div>
                 </section>
             </section>
 
             <section>
-                <h3><u>Directions</u></h3>
+                <h3><u>Remarks on Gromov-Hausdorff</u></h3>
                 <ul class="timeline">
-                    <li class="fragment">How to approximate $d_{GH}$ in higher dimensions?</li>
+                    <li>How to approximate $d_{GH}$ in higher dimensions?</li>
                     <li class="fragment">What is the least dimension where it is NP-hard?</span>
                     </li>
                     <li class="fragment">Is it NP-hard in $\mathbb{R}^1$?</li>
