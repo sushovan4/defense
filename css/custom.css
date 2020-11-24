@@ -1,3 +1,25 @@
+.reflinks a {
+    color: red;
+    font-family: monospace;
+    font-size: 0.8em;
+    text-decoration: underline;
+}
+.cite {
+    cursor: pointer;
+    text-decoration: underline;
+    color: red;
+}
+cite {
+    font-style: normal;
+    color: red;
+}
+.ref {
+    font-size: 1.2em;
+}
+.ref .column:first-child {
+    color: red
+}
+
 /* This is my custom CSS file */
 .divider {
     position: relative;

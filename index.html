@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="css/theme/sush.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="lib/css/monokai.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+</script>
 </head>
 
 <body>
@@ -194,7 +196,6 @@
             </section>
             <!-- Shape ends -->
 
-
             <section>
                 <h3><u>Geodesic Shapes</u></h3>
                 <section>
@@ -326,11 +327,13 @@
                         Before I show you the reconstruction results, it's time to enforce some density condition on the sample. We can ask for a small Hausdorff distance between the sample and the unknown shape of interest.
                     </aside>
 
-                    <img width="300" src="https://raw.githubusercontent.com/sushovan4/defense/master/h.svg" />
-                    <br> Hausdorff distance is $\max\{$
+                    <img width="500" src="h.svg" />
+                    <div class="fragment">
+                    Hausdorff distance is $\max\{$
                     <green>$a$</green>,
-                    <red>$b$</red>$\}=$
-                    <green>$a$</green>
+                    <red>$b$ </red>$\}=$
+                    <red>$b$</red>
+                    </div>
                 </section>
                 <section>
                     <definition data-header="Hausdorff Distance">
@@ -340,55 +343,38 @@
                         <green>$\sup_{a\in A}\inf_{b\in B}d_Z(a,b)$</green>,
                         <red>$\sup_{b\in B}\inf_{a\in A}d_Z(a,b)$</red>$\}.$
                     </definition>
-                </section>
-
-                <section>
+                    <br>
+                    <div class="fragment">
+                    <div class="divider">💡</div><br> 
+                    
                     <block>
                         The Hausdorff distance induces a
                         <green>complete metric space</green> on the set of all
                         <green>compact</green> subsets of a metric space.
                     </block>
-
-                    <br><br>
-                    <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> $d_H^Z(A,B)$ is sensitive to<br> shape, size, and placement.
                     </div>
                 </section>
             </section>
-
-            <section id="cech">
-                <h3><u>&#268;ech Complex</u></h3>
-                <section>
-
-                </section>
-                <section>
-                    (Niyogi, Smale et al.)
-                    <br> small $\epsilon$ + dense sample
-                    <br>=<br>
-                    <green>&#268;ech complex</green> is a good reconstruction for <span class="green">manifolds</span>
-                </section>
-            </section>
-
 
             <section id="rips">
                 <h3><u>Vietoris-Rips Complex</u></h3>
                 <section>
-                    at scale $\epsilon>0$
-                    <div style="display: flex">
-                        <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/data.png" />
-
-                        <span class="green">⟶</span>
-                        <img width="200" style="margin:50px;border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/rips.png" />
-                    </div>
-                    <definition data-header="Vietoris-Rips Complex">
-                        In a metric space $(M,d)$, each subset $A$ size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex.
+                    <img width="750" src="rips.svg" />
+                    
+                    <definition class="fragment" data-header="Vietoris-Rips Complex">
+                        For a metric space $subseteq(M,d_M)$ and scale
+                        $\varepsilon>0$, each subset $A$ of size $k$ with
+                        $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex of the Vietoris-Rips complex $R_\varepsilon(M)$.
                     </definition>
                 </section>
                 <section>
-                    (Adams H. et al.)
-                    <br> small $\epsilon$ + dense sample
-                    <br>=<br>
-                    <green>Vietoris-Rips</green> complex is a good reconstruction for <span class="green">manifolds</span>.
+                    <block data-header="Adams H. et al. <cite>Adams_2019</cite>">
+                        If small $\epsilon$ + dense sample
+                        <green>&#268;ech complex</green> is a good reconstruction for <span class="green">manifolds</span>
+                        <br> small $\epsilon$ + dense sample
+                        <br>=<br>
+                        <green>Vietoris-Rips</green> complex is a good reconstruction for <span class="green">manifolds</span>.
+                    </block>
                 </section>
             </section>
 
@@ -407,11 +393,14 @@
                     <ul class="timeline" style="font-size: 0.8em">
                         <li class="fragment">$X\subseteq\mathbb{R}^N$ is a
                             <green>geodesic</green> subspace $(X,d_L)$</li>
+                        
                         <li class="fragment">
-                            <li class="fragment">
-                                <green>Convexity radius</green> $\rho$ is positive</li>
+                            <green>Distortion</green> $\delta$ is finite
+                        </li>
+                        <li class="fragment">
+                            <green>Convexity radius</green> $\rho$ is positive</li>
 
-                            <li class="fragment">$d_H(X,S)$ is small</li>
+                        <li class="fragment">$d_H(X,S)$ is small</li>
                     </ul>
                 </section>
             </section>
@@ -446,11 +435,13 @@
                 <red>outliers</red>
                 </section>
 
-                <section>
-                <iframe src="kde.html"></iframe>
-                </section>
             </section>
 
+            <section data-background-iframe="kde.html"></section>
+
+            <section>
+                <h3><u>Remarks on Reconstruction</u></h3>
+            </section>
             <!-- Shape Comparison -->
             <section id="part-II">
                 <h3>
@@ -635,6 +626,16 @@
                     <li class="fragment">What is the least dimension where it is NP-hard?</span>
                     </li>
                     <li class="fragment">Is it NP-hard in $\mathbb{R}^1$?</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3><u>Publications</u></h3>
+                <ul style="font-size: 0.6em">
+                    <li><fullcite>majhi2019approximating</fullcite></li>
+                    <li><fullcite>fasy2018reconstruction</fullcite></li>
+                    <li><fullcite>fw18</fullcite></li>
+                    <li><fullcite>fw17</fullcite></li>
                 </ul>
             </section>
 

@@ -156,8 +156,8 @@
     <circle
        style="fill:#3be57f;fill-opacity:1;stroke:none;stroke-width:0.96499997;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path817-6"
-       cx="41.132198"
-       cy="103.04746"
+       cx="54.382236"
+       cy="103.18455"
        r="2.8348215"
        transform="rotate(2.6777378)" />
     <circle
@@ -190,11 +190,11 @@
        transform="rotate(1.0446678)" />
     <path
        style="fill:none;stroke:#3be57f;stroke-width:0.66500002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.995, 0.665;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 35.52976,105.36607 c 25.828634,0.50397 51.657007,1.00794 77.48512,1.5119"
+       d="m 52.160712,105.74405 c 20.284983,0.37798 40.569706,0.75595 60.854168,1.13392"
        id="path885"
        inkscape:connector-curvature="0"
        inkscape:path-effect="#path-effect887"
-       inkscape:original-d="m 35.52976,105.36607 c 25.828639,0.5037 51.657012,1.00767 77.48512,1.5119"
+       inkscape:original-d="m 52.160712,105.74405 c 20.284988,0.37771 40.569711,0.75568 60.854168,1.13392"
        sodipodi:nodetypes="cc" />
     <path
        sodipodi:nodetypes="cc"
