@@ -194,7 +194,7 @@
             </section>
             </section>
             <!-- Shape -->
-            <section>
+            <section id="part-I">
                 <h3>
                     <green>I</green>. &nbsp; Shape Reconstruction
                 </h3>
@@ -249,8 +249,7 @@
             </section>
             <!-- Shape ends -->
 
-
-            <section>
+            <section id="geodesic">
                 <aside class="notes">
                     So, we first get the definition straight.
                     <br> 
@@ -307,7 +306,7 @@
             </section>
             </section>
 
-            <section>
+            <section id="reconstruction">
                 <h3><u>The Reconstruction Problem</u></h3>
                 <aside class="notes">
                     So far so good with the shape part of Shape Reconstruction --- now get ready
@@ -361,7 +360,7 @@
                 </section>
             </section>
 
-            <section>
+            <section id="problem">
                 <h3><u>Problem Statement</u></h3>
                 <section>
                     <ul class="timeline" style="font-size: 0.9em">
@@ -471,15 +470,15 @@
             </section>
             <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
             
-            <section id="graph-recon">
+            <section id="geodesic-recon">
                 <h3><u>Geodesic Spaces</u></h3>
-                small $\epsilon$ + dense sample trick
-                <br><span class="red">does not work</span><br> &#128546;
-            </section>
-
-            <section>
-                <h3><u>Our Approach</u></h3>
                 <section>
+                    small $\epsilon$ + dense sample trick
+                    <br><span class="red">does not work</span><br> &#128546;
+                </section>
+
+                <section>
+                    <h3><u>Our Approach</u></h3>
                     <ul class="timeline" style="font-size: 0.8em">
                         <li class="fragment">$X\subseteq\mathbb{R}^N$ is a
                             <green>geodesic</green> subspace $(X,d_L)$</li>
@@ -491,6 +490,7 @@
                     </ul>
                 </section>
             </section>
+
             <section>
                 <h3><u>Topological Reconstruction</u></h3>
                 <section>
@@ -521,21 +521,23 @@
 
             <section>
                 <h3><u>Non-Hausdorff Noise Model</u></h3>
+                <section>
                 <img width="70%" src="wedge-nh.svg">
                 <br> The sample has distant
                 <red>outliers</red>
-            </section>
+                </section>
 
-            <section>
-                <h3><u>Discrete Morse</u></h3>
-                <red>(incomplete)</red>
+                <section>
+                <iframe src="kde.html"></iframe>
+                </section>
             </section>
 
             <!-- Shape Comparison -->
-            <section>
+            <section id="part-II">
                 <h3>
                     <green>2</green>. Comparison</h3>
             </section>
+            
             <section>
                 <aside class="notes">
                     Shape Comparison is an applied field of research. It has
