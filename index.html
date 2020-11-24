@@ -21,69 +21,37 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-background-iframe="kde.html">
-
-            </section>
             <!-- Title -->
-            <section id="title">
-
-                <h4><u>Topological Methods<br> in<br> Shape Reconstruction
+            <section id="title" data-timing="60">
+                <h4><u>Topological Methods<br> in<br> 
+                    Shape Reconstruction
                 	and
 					Comparison</u>
                 </h4>
-                <h6 style="font-style: italic">
-                    <green>Sushovan MAJHI</green>
-                </h6>
-                <span style="font-size:0.7em">Thesis Defense<br>November 25, 2020</span>
+
+                <span style="font-size:0.7em"><green>Sushovan Majhi</green>, Thesis Defense<br>November 25, 2020</span>
                 <br>
 
                 <img width="150" src="https://raw.githubusercontent.com/sushovan4/defense/master/qr.png" />
-                <br>
-                <span style="font-size:0.7em">
-					Scan the above QR or hit the following url:
-				</span>
-
-                <span class="green">smajhi.com/defense</span>
+                <br> Slides: <a href="https://smajhi.com/defense"><span class="green"><u>smajhi.com/defense</u></span></a>
+                <br><br> Thesis: <a href="https://smajhi.com/thesis"><span class="green"><u>smajhi.com/thesis</u></span></a>
+                <aside class="notes">
+                    Good morning, everyone. Thank you all for fitting the talk in your busy schedule.
+                    <br> To get a copy of my slides online, please scan the QR code or go to 'smajhi.com/defense' using your browser. For the talk, I am using a technology, known as multiplexing -- you get live updates on your device when I move around
+                    the slides. Also, a copy of my thesis is available at 'smajhi.com/thesis'.
+                    <br><br> I already took six years, so without further adieu, let's get started.
+                </aside>
             </section>
             <!-- Title ends -->
-
-            <section id="talk">
-                <h3><u>The Manifesto</u></h3>
-                <ul class="timeline" style="font-size:0.6em">
-                    <li class="fragment">
-                        <green>Introduction to Shape Reconstruction</green>
-                    </li>
-
-                    <li class="fragment">
-                        <green>Vietoris-Rips and &#268;ech Complexes</green>
-                    </li>
-
-                    <li class="fragment">
-                        <green>Geodesic Spaces and their Reconstruction</green>
-                    </li>
-
-                    <li class="fragment">
-                        Non-Hausdorff Density Models
-                    </li>
-
-                    <li class="fragment">
-                        Discrete Morse Theory in Graph Reconstruction
-                    </li>
-
-                    <li class="fragment">
-                        <red>Introduction to Shape Comparison</red>
-                    </li>
-
-                    <li class="fragment">
-                        <red>Approximating the Gromov-Hausdorff Distance</red>
-                    </li>
-                </ul>
-            </section>
 
             <!-- People -->
             <section id="collaborators">
                 <h3><u>Collaborators</u></h3>
-                <section id="carola">
+                <section id="carola" data-timing="30">
+                    <aside class="notes">
+                        During the course of my PhD, I am honored to have had the opportunity to work with some very nice mathematicians and computer scientists. I would like to take this grand event to thank them for their earnest mentoring, helpful ideas, and generous collaboration.
+                        <br> I would like to express my graditude to my thesis adviser Carola Wenk; Brittany Fasy, Montana State, Rafal Komendarczyk, Mathematics, and Jeff Vitter, U of Mississippi.
+                    </aside>
                     <img width="500" src="https://news.tulane.edu/sites/news/files/080916_carola-wenk800_617_pbc.jpg" />
                     <p>
                         Carola Wenk (adviser)<br>
@@ -115,6 +83,9 @@
             <!-- People ends -->
 
             <section id="special">
+                <aside class="notes">
+                    Also, I would like to extend my sincere thanks to Facundo Memoli, OSU, Yusu Wang, UC San Diego; Helmut Alt from the Free University of Berlin, and the Mathematics and Computer Science department at Tulane University.
+                </aside>
                 <h3><u>Special Thanks</u></h3>
                 <br><br>
                 <ul class="timeline" style="font-size:0.7em">
@@ -131,29 +102,93 @@
                     </li>
                 </ul>
             </section>
+
+            <section id="talk">
+                <h3><u>The Manifesto</u></h3>
+                <aside class="notes">
+                    The primary motivation of my thesis is fueled by the need of efficient and provable techniques to reconstruct and compare metric graphs. A challenging, practical problem is to use the pyriad of GPS locations from travellers and turning them into a nice-looking
+                    and accurate map or road-network of the city.
+                    <br>
+
+                    <br> The contribution of my thesis straddles between computational geometry and computational geometry. Naturally, our methods are inspired by a fair count of ideas from both topology and geometry. We deem our contribution to be best
+                    appreciate in the relatively recent field -- Topological Data Analysis or TDA.
+                    <br>
+
+                </aside>
+
+                <section>
+                    <br>
+                    <img width="65%" src="WordArt.png">
+                </section>
+
+                <section>
+                    <aside class="notes">
+                        Like the thesis, the talk is entails two logical parts -- shape reconstruction and shape comparison. I have tried to make the ride today as gentle as possible for the audience. I will try to illuminate the trail of our investigation and the pivotal turns
+                        -- sparing you of mathematical proves.
+                    </aside>
+
+                    <br>
+                    <ul class="timeline" style="font-size:0.6em">
+                        <li class="fragment">
+                            Introduction to Shape Reconstruction
+                        </li>
+
+                        <li class="fragment">
+                            Nerve, &#268;ech and Vietoris-Rips
+                        </li>
+
+                        <li class="fragment">
+                            Topological and Geodesic Reconstruction of Geodesic Spaces
+                        </li>
+
+                        <li class="fragment">
+                            Non-Hausdorff Noise and Discrete Morse Theory
+                        </li>
+
+                        <li class="fragment">
+                            <red>Break</red>
+                        </li>
+
+                        <li class="fragment">
+                            Introduction to Shape Comparison
+                        </li>
+
+                        <li class="fragment">
+                            Hausdorff and Gromov-Hausdorff Distance
+                        </li>
+
+                        <li class="fragment">
+                            Approximation Algorithm
+                        </li>
+                    </ul>
+                </section>
+            </section>
             <!-- Shape -->
             <section>
                 <h3>
-                    <green>I</green>. &nbsp;Reconstruction
+                    <green>I</green>. &nbsp; Shape Reconstruction
                 </h3>
             </section>
 
             <section id="shape">
                 <h3><u>Shapes</u></h3>
                 <aside class="notes">
-                    In topology, shapes are distinguished by the topological features they manifest. The best class of shapes one always hopes to deal with is manifolds.
-
+                    Pretty much whatever we see can be called a shape. In topology, shapes are distinguished by the topological features they manifest. The best class of shapes one always hopes to deal with is smooth manifolds smoothly embedded in Euclidean space.
+                    <br> For example, the smooth closed curve embedded in the plane on the left and the hollow torus embedded in the space on the right.
                 </aside>
                 <section id="manifold">
                     <img width="200" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/defense/master/circle.png" />
                     <img width="300" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/defense/master/torus.png" />
-                    <br> Manifolds (the good ones)
-                </section>
-                <section id="non-manifold">
-                    <img width="300" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/defense/master/circles.png" />
-                    <br> Stratified-manifolds (the bad ones)
+                    <br> Smooth Manifolds (the good ones)
                 </section>
                 <section id="map">
+                    <aside class="notes">
+                        However, more often than not, practical applications deal with shapes that are far from being a smooth manifold. The map of the city of New Orleans can be modelled as a graph, where the intersections are thought of as the vertices, whereas the roads the
+                        edges.
+                        <br> Clearly, a graph is NOT a manifold -- because of the branchings at the intersections and the corners.
+                        <br> As our story unfolds, we will see that the pinnacle of our development can handle graphs -- as well as even more sophisticated and more generalized version thereof -- that we call geodesic spaces.
+                    </aside>
+
                     <iframe width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=tulane%20university&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
 	    			</iframe>
                     <br> Our shapes of interest (the ugly ones)
@@ -161,9 +196,59 @@
             </section>
             <!-- Shape ends -->
 
+
             <section>
-                <h3><u>Motivation</u></h3>
+                <aside class="notes">
+                    So, we first get the definition straight.
+                    <br> In geometry, a geodesic mimics the concept of SHORTEST PATH between two points on a graph.
+                    <br> Explain the picture.
+                    <br> It is evident from the definition that a graph is a geodesic space, so is any compact, smoothly submanifold of the Euclidean space. Higher dimensional simplicial complexes are also examples of geodesic spaces.
+                    <br> For the curious audience, the sphere -- if punctured at a point -- no longer remains a geodesic space.
+                </aside>
+                <h3><u>Geodesic Shapes</u></h3>
                 <section>
+                    <img width="35%" src="geodesic.svg">
+
+                    <block class="fragment">
+                        For any two points $x,y\in X\subseteq\mathbb{R}^N$, there exists a geodesic or shortest path.
+                    </block>
+                </section>
+
+                <section>
+                    <aside class="notes">
+                        With the definition of the geodesic spaces under our belts, it's time to quickly squirrel away two very important properties -- or rather attributes that become indispensible in the theory ahead.
+                    </aside>
+                    <definition data-header="Distortion" class="fragment">
+                        For a geodesic space $X\subseteq\mathbb{R}^N$, the
+                        <green>distortion</green>
+                        $$\delta=\sup_{x\neq y}\frac{d_L(x,y)}{\|x-y\|}.$$
+                    </definition>
+                    <br>
+                    <definition data-header="Convexity Radius" class="fragment">
+                        For a geodesic space $X\subseteq\mathbb{R}^N$, the
+                        <green>convexity radius</green> $\rho$ captures how furthest apart two points $x,y\in X$ can be still maintaining to have a unique geodesic.
+                    </definition>
+                    <aside class="notes">
+                        For any two points, being farther apart and still having a unique shortest path or geodesic is a delicate tradeoff.
+                        <br> Farther two points go, slimmer the chance of having a unique geodesic between them becomes.
+                        <br> To give you the perspective, the convexity radius of a circle of unit length is a quarter. Similarly, the convexity radius of a graph is ...
+                    </aside>
+                </section>
+            </section>
+
+            <section>
+                <h3><u>The Reconstruction Problem</u></h3>
+                <aside class="notes">
+                    So far so good with the shape part of Shape Reconstruction --- now get ready for the fun part --- reconstruction.
+                    <br> Our goal is very simple. Given a chunk of points --- called a sample --- in our case a point-cloud --- What can we say?
+                    <br> Well --- the goal is not very lucid --- is it? What if I say a little bird told me that the points are sampled from a shape that a topologist might care about --- can we guess what the original shape was?
+
+                </aside>
+                <section>
+                    <aside class="notes">
+                        Cases where known statistical inference techniques might fall short, and topological reconstruction/comparison tools are deemed a better alternative.
+                    </aside>
+
                     <img src="https://raw.githubusercontent.com/sushovan4/defense/master/sample_wedge.svg">
                     <p style="font-size: 0.6em">Noisy Sample
                         <green>(www.smajhi.com/shape-reconstruction)</green>
@@ -176,12 +261,10 @@
                         <red>$S^1\wedge S^1$</red>
                         <green>(www.smajhi.com/shape-reconstruction)</green>
                     </p>
-                    <aside class="notes">
-                        My research is broadly in topological data analysis. In my research, I looked at a data like this through the lenses of topology and geometry. I considered data with intrinsic topological and geometric embellishment. Cases where known statistical inference
-                        techniques might fall short, and topological reconstruction/comparison tools are deemed a better alternative.
-                    </aside>
                 </section>
+
                 <section>
+                    <br>
                     <img src="https://raw.githubusercontent.com/sushovan4/defense/master/berlin.jpg">
                     <p style="font-size: 0.6em">
                         GPS Traces Berlin
@@ -189,53 +272,12 @@
                     </p>
                 </section>
                 <section>
+                    <br>
                     <img src="https://raw.githubusercontent.com/sushovan4/defense/master/mahmuda.jpg">
                     <p style="font-size: 0.6em">
                         Reconstructed Map or Road-Network
                         <green>(www.mapconstruction.org)</green>
                     </p>
-                </section>
-            </section>
-
-            <section id="hausdorff">
-                <h3><u>Hausdorff Distance</u></h3>
-                <section id="hausdorff">
-                    <br>
-                    <img width="300" src="https://raw.githubusercontent.com/sushovan4/defense/master/h.svg" />
-                    <br> Hausdorff distance is $\max\{$
-                    <green>$a$</green>,
-                    <red>$b$</red>$\}=$
-                    <green>$a$</green>
-                </section>
-
-                <section>
-                    <definition data-header="Hausdorff Distance">
-                        Let $A,B\subseteq(Z,d_Z)$. Their
-                        <green>Hausdorff distance
-                        </green> is defined by <br> $d_H^Z(A,B)=\max\{$
-                        <green>$\sup_{a\in A}\inf_{b\in B}d_Z(a,b)$</green>,
-                        <red>$\sup_{b\in B}\inf_{a\in A}d_Z(a,b)$</red>$\}.$
-                    </definition>
-                    <br><br>
-                    <div class="fragment">
-                        The superscript is dropped if $Z=\mathbb{R}^N$
-                    </div>
-                </section>
-
-                <section>
-                    <block>
-                        The Hausdorff distance induces a
-                        <green>complete metric space</green> on the set of all
-                        <green>compact</green> subsets of a metric space.
-                    </block>
-
-                    <br><br>
-                    <div class="fragment fade-in">
-                        <div class="divider">💡</div><br> $d_H^Z(A,B)$ is sensitive to<br>
-                        <span class="red">Shape</span> +
-                        <span class="red">Size</span> +
-                        <span class="red">Placement</span>.
-                    </div>
                 </section>
             </section>
 
@@ -257,22 +299,7 @@
                     </ul>
                 </section>
                 <section>
-                    <br>
-                    <red>Q</red>: How to infer the topology of $X$ from a finite sample $S$?<br>
-                    <br>
-                    <div class="fragment">
-                        <div class="divider">💡</div>
-                        <br>
-                        <green>&mdash;</green> Use topological methods<br>
-                    </div>
-                    <ul class="timeline" style="font-size: 0.8em">
-                        <li class="fragment">Nerve Lemma</li>
-                        <li class="fragment">Vietoris-Rips, &#268;ech Complex</li>
-                        <li class="fragment">Discrete Morse Theory</li>
-                    </ul>
-                </section>
-                <section>
-                    <red>Q</red>: What does
+                    <red>Q</red>: Can we infer the toplogy of $X$ from $S$? What does
                     <green>inference</green> even mean in such a reconstruction context?
                     <ul class="timeline" style="font-size: 0.7em">
                         <li class="fragment">Compute
@@ -289,17 +316,39 @@
                             <green>geometrically close</green> to $X$</li>
                     </ul>
                 </section>
-            </section>
-
-            <section id="sampling">
-                <h3><u>Shape <span class="green">⟶</span> Sample</u></h3>
-                <section>
-                    <img width="500" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/click.jpg" />
-                    <br> continuous object <span class="green">⟶</span> Array of rgb pixels
+                <section id="hausdorff">
+                    <br>
+                    <img width="300" src="https://raw.githubusercontent.com/sushovan4/defense/master/h.svg" />
+                    <br> Hausdorff distance is $\max\{$
+                    <green>$a$</green>,
+                    <red>$b$</red>$\}=$
+                    <green>$a$</green>
                 </section>
+
                 <section>
-                    <img width="700" style="border:none;background:none" src="https://raw.githubusercontent.com/sushovan4/recon-presentation/master/gps.jpg" />
-                    <br><br> Road <span class="green">⟶</span> GPS locations
+                    <definition data-header="Hausdorff Distance">
+                        Let $A,B\subseteq(Z,d_Z)$. Their
+                        <green>Hausdorff distance
+                        </green> is defined by <br> $d_H^Z(A,B)=\max\{$
+                        <green>$\sup_{a\in A}\inf_{b\in B}d_Z(a,b)$</green>,
+                        <red>$\sup_{b\in B}\inf_{a\in A}d_Z(a,b)$</red>$\}.$
+                    </definition>
+                </section>
+
+                <section>
+                    <block>
+                        The Hausdorff distance induces a
+                        <green>complete metric space</green> on the set of all
+                        <green>compact</green> subsets of a metric space.
+                    </block>
+
+                    <br><br>
+                    <div class="fragment fade-in">
+                        <div class="divider">💡</div><br> $d_H^Z(A,B)$ is sensitive to<br>
+                        <span class="red">Shape</span> +
+                        <span class="red">Size</span> +
+                        <span class="red">Placement</span>.
+                    </div>
                 </section>
             </section>
 
@@ -355,12 +404,10 @@
                         <li class="fragment">$X\subseteq\mathbb{R}^N$ is a
                             <green>geodesic</green> subspace $(X,d_L)$</li>
                         <li class="fragment">
-                            <green>Distortion</green>
-                            $\delta=\sup_{x\neq y}\frac{d_L(x,y)}{\|x-y\|}$ is finite</li>
-                        <li class="fragment">
-                            <green>Convexity radius</green> $\rho$ is positive</li>
+                            <li class="fragment">
+                                <green>Convexity radius</green> $\rho$ is positive</li>
 
-                        <li class="fragment">$d_H(X,S)$ is small</li>
+                            <li class="fragment">$d_H(X,S)$ is small</li>
                     </ul>
                 </section>
             </section>
@@ -601,13 +648,12 @@
     <script>
         Reveal.initialize({
             hash: true,
+            totalTime: 3000,
             controls: true,
             controlsTutorial: true,
             controlsLayout: 'edge',
             progress: true,
-            defaultTiming: 120,
             slideNumber: true,
-            hash: true,
             keyboard: true,
             center: true,
             math: {
