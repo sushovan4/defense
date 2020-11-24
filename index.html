@@ -348,26 +348,21 @@
             </section>
 
             <section id="rips">
-                <h3><u>Vietoris-Rips Complex</u></h3>
                 <section>
+                    <h3><u>Vietoris-Rips Complex</u></h3>
                     <img width="750" src="rips.svg" />
 
                     <definition class="fragment" data-header="Vietoris-Rips Complex">
                         For a metric space $subseteq(M,d_M)$ and scale $\varepsilon>0$, each subset $A$ of size $k$ with $diam_d(A)\leq\epsilon$ is a $(k-1)$-simplex of the Vietoris-Rips complex $R_\varepsilon(M)$.
                     </definition>
                 </section>
+                <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
                 <section>
-                    <block data-header="Adams H. et al. <cite>Adams_2019</cite>">
-                        If small $\epsilon$ + dense sample
-                        <green>&#268;ech complex</green> is a good reconstruction for <span class="green">manifolds</span>
-                        <br> small $\epsilon$ + dense sample
-                        <br>=<br>
-                        <green>Vietoris-Rips</green> complex is a good reconstruction for <span class="green">manifolds</span>.
+                    <block data-header="Adams H. et al. <cite>Adams_2019</cite><br><hr>">
+                        Let $X$ be a smooth sub-manifold. If $\epsilon>0$ is small and $d_H(X,S)$ is also small, then the Vietoris-Rips complex $R_\varepsilon(S)$ is homotopy equivalent to $X$.
                     </block>
                 </section>
             </section>
-
-            <section data-background-iframe="https://smajhi.com/shape-reconstruction"></section>
 
             <!-- Build context around ...-->
             <section id="graph-recon">
@@ -392,17 +387,16 @@
                     <li class="fragment">$d_H(X,S)$ is small</li>
                 </ul>
             </section>
-            </section>
 
             <section>
+                <aside class="notes">
+                    Instead of looking at Rips complex only at one scale epsilon, we take two scales. We first collect the cycles at the lower scale. There might be some anomalous cycles --- but we kill them at the larger scale. At the end, the surviving cycles generate
+                    the desired homology groups of the unknown geodesic space X.
+                    <br> Such an idea of accounting for two scales is known as Persistent Homology. However, the novelty here is to recognize the two sampling parameters.
+                </aside>
                 <h3><u>Topological Reconstruction</u></h3>
                 <section>
-                    <block data-header="<u>Vietoris-Rips Reconstruction</u>">
-                        If $d_H(X,S)
-                        <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
-                </section>
-                <section>
-                    <block data-header="<u>&#268;ech Reconstruction</u>">
+                    <block data-header="Vietoris-Rips Reconstruction <cite>fasy2018reconstruction</cite><br><hr>">
                         If $d_H(X,S)
                         <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, the image $$Im(j_*)\simeq\pi_*(X),$$ where $j:\mathcal{R}_{\epsilon}(S)\to\mathcal{R}_{\frac{1}{2}(3\delta+1)\epsilon}(S)$. </block>
                 </section>
@@ -410,28 +404,27 @@
             <section>
                 <h3><u>Geometric Reconstruction</u></h3>
                 <section>
-                    <block data-header="<u>Graph Reconstruction</u>">
+                    <block data-header="Graph Reconstruction
+                    <cite>fasy2018reconstruction</cite><br><hr>">
                         If $d_H(G,S)
                         <\epsilon<\frac{\rho}{2\delta(3\delta+1)}$, we can output $\widetilde{G}$ such that $$\widetilde{G}\simeq G,$$ and $d_H(G,\widetilde{G})$ is small. </block>
                 </section>
             </section>
 
             <section>
-                <h3><u>Non-Hausdorff Noise Model</u></h3>
-                <section>
-                    <img width="70%" src="wedge-nh.svg">
-                    <br> The sample has distant
-                    <red>outliers</red>
-                </section>
-
-            </section>
-
-            <section data-background-iframe="kde.html"></section>
-
-            <section data-back></section>
-
-            <section>
                 <h3><u>Remarks on Reconstruction</u></h3>
+                <ul class="timeline" style="font-size: 0.7em;">
+                    <li class="fragment">
+                        The visualization tool is available as a webapp (<a href="">github.com/sushovan4/shape-reconstruction</a>). Need volunteers to extend it.
+                    </li>
+                    <li class="fragment">
+                        Our geometric reconstruction only works for planar graphs.
+                    </li>
+                    <li class="fragment">
+                        We have used Forman's
+                        <green>Discrete Morse Theory</green> in <cite>fw18</cite> to address more realistic noise model for graphs.
+                    </li>
+                </ul>
             </section>
 
             <section data-background-iframe="https://www.tickcounter.com/timer">
