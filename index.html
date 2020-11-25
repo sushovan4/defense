@@ -431,7 +431,8 @@
             </section>
             <!-- Shape Comparison -->
             <section id="part-II">
-                <h3><green>2</green>. Comparison</h3>
+                <h3>
+                    <green>2</green>. Comparison</h3>
             </section>
 
             <section>
@@ -673,7 +674,19 @@
                     webFont: "Neo-Euler"
                 }
             },
-            plugins: [RevealHighlight, RevealNotes, RevealMath]
+            plugins: [RevealHighlight, RevealNotes, RevealMath],
+            dependencies: [{
+                src: 'https://reveal-multiplex.glitch.me/socket.io/socket.io.js',
+                async: true
+            }, {
+                src: 'https://reveal-multiplex.glitch.me/client.js',
+                async: true
+            }],
+            multiplex: {
+                secret: null,
+                id: '913636afc30e63c8',
+                url: 'https://reveal-multiplex.glitch.me/'
+            },
         });
     </script>
     <!-- Scripts end -->
